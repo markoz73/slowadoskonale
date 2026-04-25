@@ -492,7 +492,7 @@ const Contact = () => {
   return (
     <section id="kontakt" className="section contact" data-testid="contact-section">
       <div className="contact-grid">
-        <form className="form reveal" onSubmit={submit} data-testid="contact-form">
+        {/* <form className="form reveal" onSubmit={submit} data-testid="contact-form">
           <h3>Napisz wiadomość</h3>
           <div className="field">
             <label htmlFor="name">Imię</label>
@@ -540,7 +540,7 @@ const Contact = () => {
               </>
             )}
           </button>
-        </form>
+        </form> */}
 
         <aside className="contact-info reveal">
           <div className="eyebrow">Kontakt</div>
