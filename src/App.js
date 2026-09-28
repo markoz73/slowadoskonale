@@ -58,7 +58,7 @@ const TESTIMONIALS = [
     name: "Anna Kowalska",
     role: "Autorka powieści",
     quote:
-      "Współpraca z Panią Redaktor to czysta przyjemność. Mój tekst zyskał rytm, lekkość i precyzję, jakiej sama nie potrafiłam wypracować przez miesiące pracy.",
+      "Współpraca z Panią Redaktor to najczystsza przyjemność. Mój tekst zyskał rytm, lekkość i precyzję, jakiej sama nie potrafiłam wypracować przez miesiące pracy.",
   },
   {
     name: "Marcin Nowak",
