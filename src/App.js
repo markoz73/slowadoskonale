@@ -219,7 +219,7 @@ const Hero = () => {
         <div className="reveal">
           <div className="hero-kicker">Profesjonalna redakcja & korekta</div>
           <h1>
-            Twoje słowa
+            Twoje słowka
             <br />
             w <em>perfekcyjnym</em> wydaniu.
           </h1>
