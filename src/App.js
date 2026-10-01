@@ -64,41 +64,25 @@ const OFFERS = [
 
 const TESTIMONIALS = [
   {
-    name: "Anna Kowalska",
-    role: "Autorka powieści",
+    name: "Hubert Jankowski",
+    role: "Autor autobiografii",
     quote:
-      "Współpraca z Panią Redaktor to najczystsza przyjemność. Mój tekst zyskał rytm, lekkość i precyzję, jakiej sama nie potrafiłam wypracować przez miesiące pracy.",
+      "Miałem przyjemność współpracować z Panią Agnieszką. Jako osoba niewidoma, często spotykam się z wyzwaniami wynikającymi z dostosowania procesów pracy do moich potrzeb, a Pani Agnieszka wykazała się nie tylko wysokim poziomem profesjonalizmu, ale również empatią i elastycznością, co pozwoliło nam wspólnie wypracować skuteczne metody współpracy. Dzięki jej otwartości i umiejętności dostosowania komunikacji, mogłem w pełni angażować się w proces redakcyjny. Pani Agnieszka cechuje się doskonałą dbałością o szczegóły, terminowością oraz umiejętnością skutecznego rozwiązywania problemów, co przekładało się na wysoką jakość efektów naszej pracy. Współpraca z Panią Agnieszką była nie tylko bardzo efektywna, ale również przyjemna.",
   },
   {
-    name: "Marcin Nowak",
-    role: "Doktorant, UJ",
+    name: "Andzrej Zalewski",
+    role: "Felietonista",
     quote:
-      "Profesjonalizm na najwyższym poziomie. Korekta mojej rozprawy została wykonana w terminie, z ogromną dbałością o każdy detal i terminologię.",
+      "Współpracowało się fantastycznie.",
   },
   {
-    name: "Katarzyna Wiśniewska",
-    role: "Wydawnictwo Literackie",
+    name: "Biuro Rachunkowe",
+    role: "Właściciel",
     quote:
-      "Każdy tekst, który wraca z redakcji, jest gotowy do druku. Polecam każdemu, kto traktuje słowo poważnie — bo tu słowa są naprawdę doskonalone.",
+      "Pani Agnieszka zredagowała nam wzór umowy o prowadzenie usług. Nawet w takim dokumencie - sporządzonym przez kancelarię prawną - zostało znalezionych dużo miejsc do ulepszenia. Brawo!",
   },
-  {
-    name: "Tomasz Lewandowski",
-    role: "Copywriter",
-    quote:
-      "Zlecałem już wiele korekt, ale dopiero tutaj poczułem, że mój tekst nie jest poprawiany — jest doskonalony. Różnica jest olbrzymia.",
-  },
-  {
-    name: "Magdalena Zielińska",
-    role: "Blogerka kulinarna",
-    quote:
-      "Dzięki redakcji moje przepisy brzmią teraz tak, jak zawsze chciałam, żeby brzmiały. Polecam z czystym sumieniem.",
-  },
-  {
-    name: "Piotr Kamiński",
-    role: "Autor książki popularnonaukowej",
-    quote:
-      "Cierpliwość, dokładność i ogromna wiedza. Moja książka stała się wyraźnie lepsza po jednej rundzie współpracy.",
-  },
+
+  
 ];
 
 const Stars = () => (
