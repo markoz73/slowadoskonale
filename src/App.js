@@ -73,7 +73,7 @@ const TESTIMONIALS = [
     name: "Hubert Jankowski",
     role: "Autor autobiografii",
     quote:
-      "Miałem przyjemność współpracować z Panią Agnieszką. Jako osoba niewidoma, spotykam się z wyzwaniami wynikającymi z dostosowania procesów pracy do moich potrzeb, a Pani Agnieszka wykazała się nie tylko wysokim poziomem profesjonalizmu, ale również empatią i elastycznością, co pozwoliło nam wspólnie wypracować skuteczne metody pracy. Dzięki jej otwartości i umiejętności dostosowania komunikacji, mogłem w pełni angażować się w proces redakcyjny. ani Agnieszka cechuje się doskonałą dbałością o szczegóły, terminowością oraz umiejętnością skutecznego rozwiązywania problemów, co przekładało się na wysoką jakość efektów naszej pracy. Współpraca z Panią Agnieszką była nie tylko bardzo efektywna, ale również przyjemna. Zdecydowanie polecam jej usługi każdemu, kto poszukuje rzetelnego, zaangażowanego i wrażliw",
+      "Miałem przyjemność współpracować z Panią Agnieszką. Jako osoba niewidoma, spotykam się z wyzwaniami wynikającymi z dostosowania procesów pracy do moich potrzeb, a Pani Agnieszka wykazała się nie tylko wysokim poziomem profesjonalizmu, ale również empatią i elastycznością, co pozwoliło nam wspólnie wypracować skuteczne metody pracy. Dzięki jej otwartości i umiejętności dostosowania komunikacji, mogłem w pełni angażować się w proces redakcyjny. Pani Agnieszka cechuje się doskonałą dbałością o szczegóły, terminowością oraz umiejętnością skutecznego rozwiązywania problemów, co przekładało się na wysoką jakość efektów naszej pracy. Współpraca z Panią Agnieszką była nie tylko bardzo efektywna, ale również przyjemna. Zdecydowanie polecam jej usługi każdemu, kto poszukuje rzetelnego, zaangażowanego i wrażliwego redaktora.",
   },
   {
     name: "Andrzej Zalewski",
@@ -85,7 +85,7 @@ const TESTIMONIALS = [
     name: "Biuro Rachunkowe",
     role: "Właściciel",
     quote:
-      "Pani Agnieszka zredagowała nam wzór umowy o prowadzenie usług. Nawet w takim dokumencie - sporządzonym przez kancelarię prawną - znalazała dużo miejsc do ulepszenia. Brawo!",
+      "Pani Agnieszka zredagowała nam wzór umowy o prowadzenie usług. Nawet w takim dokumencie - sporządzonym przez kancelarię prawną - znalazła dużo miejsc do ulepszenia. Brawo!",
   },
 
   
@@ -562,7 +562,7 @@ const Contact = () => {
             <li>
               <div className="info-icon"><Mail size={18} /></div>
               <div className="info-text">
-                <div className="lbl">Email</div>
+                <div className="lbl">E-mail</div>
                 <a href="mailto:agnieszka.kozak@slowadoskonale.pl" data-testid="contact-email">
                   agnieszka.kozak@slowadoskonale.pl
                 </a>
