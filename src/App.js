@@ -62,44 +62,44 @@ const OFFERS = [
   },
 ];
 
-// const TESTIMONIALS = [
-//   {
-//     name: "Anna Kowalska",
-//     role: "Autorka powieści",
-//     quote:
-//       "Współpraca z Panią Redaktor to najczystsza przyjemność. Mój tekst zyskał rytm, lekkość i precyzję, jakiej sama nie potrafiłam wypracować przez miesiące pracy.",
-//   },
-//   {
-//     name: "Marcin Nowak",
-//     role: "Doktorant, UJ",
-//     quote:
-//       "Profesjonalizm na najwyższym poziomie. Korekta mojej rozprawy została wykonana w terminie, z ogromną dbałością o każdy detal i terminologię.",
-//   },
-//   {
-//     name: "Katarzyna Wiśniewska",
-//     role: "Wydawnictwo Literackie",
-//     quote:
-//       "Każdy tekst, który wraca z redakcji, jest gotowy do druku. Polecam każdemu, kto traktuje słowo poważnie — bo tu słowa są naprawdę doskonalone.",
-//   },
-//   {
-//     name: "Tomasz Lewandowski",
-//     role: "Copywriter",
-//     quote:
-//       "Zlecałem już wiele korekt, ale dopiero tutaj poczułem, że mój tekst nie jest poprawiany — jest doskonalony. Różnica jest olbrzymia.",
-//   },
-//   {
-//     name: "Magdalena Zielińska",
-//     role: "Blogerka kulinarna",
-//     quote:
-//       "Dzięki redakcji moje przepisy brzmią teraz tak, jak zawsze chciałam, żeby brzmiały. Polecam z czystym sumieniem.",
-//   },
-//   {
-//     name: "Piotr Kamiński",
-//     role: "Autor książki popularnonaukowej",
-//     quote:
-//       "Cierpliwość, dokładność i ogromna wiedza. Moja książka stała się wyraźnie lepsza po jednej rundzie współpracy.",
-//   },
-// ];
+const TESTIMONIALS = [
+  {
+    name: "Anna Kowalska",
+    role: "Autorka powieści",
+    quote:
+      "Współpraca z Panią Redaktor to najczystsza przyjemność. Mój tekst zyskał rytm, lekkość i precyzję, jakiej sama nie potrafiłam wypracować przez miesiące pracy.",
+  },
+  {
+    name: "Marcin Nowak",
+    role: "Doktorant, UJ",
+    quote:
+      "Profesjonalizm na najwyższym poziomie. Korekta mojej rozprawy została wykonana w terminie, z ogromną dbałością o każdy detal i terminologię.",
+  },
+  {
+    name: "Katarzyna Wiśniewska",
+    role: "Wydawnictwo Literackie",
+    quote:
+      "Każdy tekst, który wraca z redakcji, jest gotowy do druku. Polecam każdemu, kto traktuje słowo poważnie — bo tu słowa są naprawdę doskonalone.",
+  },
+  {
+    name: "Tomasz Lewandowski",
+    role: "Copywriter",
+    quote:
+      "Zlecałem już wiele korekt, ale dopiero tutaj poczułem, że mój tekst nie jest poprawiany — jest doskonalony. Różnica jest olbrzymia.",
+  },
+  {
+    name: "Magdalena Zielińska",
+    role: "Blogerka kulinarna",
+    quote:
+      "Dzięki redakcji moje przepisy brzmią teraz tak, jak zawsze chciałam, żeby brzmiały. Polecam z czystym sumieniem.",
+  },
+  {
+    name: "Piotr Kamiński",
+    role: "Autor książki popularnonaukowej",
+    quote:
+      "Cierpliwość, dokładność i ogromna wiedza. Moja książka stała się wyraźnie lepsza po jednej rundzie współpracy.",
+  },
+];
 
 const Stars = () => (
   <div className="t-stars" aria-label="Ocena 5 na 5">
