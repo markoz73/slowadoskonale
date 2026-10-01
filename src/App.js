@@ -64,13 +64,19 @@ const OFFERS = [
 
 const TESTIMONIALS = [
   {
+    name: "Joanna Zimowska",
+    role: "Autor niezależny / Wydawca",
+    quote:
+      "Gorąco polecam panią Agnieszkę! Świetny kontakt, terminowość oraz ogromne zaangażowanie w pracy przy tekście. Z pewnością wrócę z kolejną powieścią. To redaktorka, której długo szukałam. Jeszcze raz polecam!",
+  },
+    {
     name: "Hubert Jankowski",
     role: "Autor autobiografii",
     quote:
-      "Miałem przyjemność współpracować z Panią Agnieszką. Jako osoba niewidoma, często spotykam się z wyzwaniami wynikającymi z dostosowania procesów pracy do moich potrzeb, a Pani Agnieszka wykazała się nie tylko wysokim poziomem profesjonalizmu, ale również empatią i elastycznością, co pozwoliło nam wspólnie wypracować skuteczne metody współpracy. Dzięki jej otwartości i umiejętności dostosowania komunikacji, mogłem w pełni angażować się w proces redakcyjny. Pani Agnieszka cechuje się doskonałą dbałością o szczegóły, terminowością oraz umiejętnością skutecznego rozwiązywania problemów, co przekładało się na wysoką jakość efektów naszej pracy. Współpraca z Panią Agnieszką była nie tylko bardzo efektywna, ale również przyjemna.",
+      "Miałem przyjemność współpracować z Panią Agnieszką. Jako osoba niewidoma, spotykam się z wyzwaniami wynikającymi z dostosowania procesów pracy do moich potrzeb, a Pani Agnieszka wykazała się nie tylko wysokim poziomem profesjonalizmu, ale również empatią i elastycznością, co pozwoliło nam wspólnie wypracować skuteczne metody pracy. Dzięki jej otwartości i umiejętności dostosowania komunikacji, mogłem w pełni angażować się w proces redakcyjny. ani Agnieszka cechuje się doskonałą dbałością o szczegóły, terminowością oraz umiejętnością skutecznego rozwiązywania problemów, co przekładało się na wysoką jakość efektów naszej pracy. Współpraca z Panią Agnieszką była nie tylko bardzo efektywna, ale również przyjemna. Zdecydowanie polecam jej usługi każdemu, kto poszukuje rzetelnego, zaangażowanego i wrażliw",
   },
   {
-    name: "Andzrej Zalewski",
+    name: "Andrzej Zalewski",
     role: "Felietonista",
     quote:
       "Współpracowało się fantastycznie.",
@@ -79,7 +85,7 @@ const TESTIMONIALS = [
     name: "Biuro Rachunkowe",
     role: "Właściciel",
     quote:
-      "Pani Agnieszka zredagowała nam wzór umowy o prowadzenie usług. Nawet w takim dokumencie - sporządzonym przez kancelarię prawną - zostało znalezionych dużo miejsc do ulepszenia. Brawo!",
+      "Pani Agnieszka zredagowała nam wzór umowy o prowadzenie usług. Nawet w takim dokumencie - sporządzonym przez kancelarię prawną - znalazała dużo miejsc do ulepszenia. Brawo!",
   },
 
   
@@ -330,7 +336,7 @@ const About = () => (
           </p>
         <div className="signature">
           Agnieszka Kozak
-          <small>Redaktor i korektor</small>
+          
         </div>
       </div>
     </div>
@@ -374,8 +380,8 @@ const Testimonials = () => {
       <div className="container">
         <div className="t-head reveal">
           <div>
-            <div className="eyebrow">Opinie klientów</div>
-            <h2 className="section-title">Słowa, które do mnie wracają.</h2>
+            <div className="eyebrow">Opinie twórców</div>
+            <h2 className="section-title">Słowa, które do mnie wracają</h2>
             <p className="section-sub">
               Najpiękniejsze rekomendacje to te, w których czuć ulgę
               i dumę autorów z gotowego tekstu.
