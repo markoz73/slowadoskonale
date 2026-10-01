@@ -8,6 +8,7 @@ import {
   Feather,
   PenLine,
   BookOpen,
+  SearchCheck,
   Mail,
   Phone,
   Instagram,
@@ -30,26 +31,34 @@ const OFFERS = [
   {
     n: "01",
     icon: <PenLine size={22} strokeWidth={1.5} />,
-    title: "Korekta",
+    title: "Redakcja",
     desc:
-      "Eliminacja błędów językowych, ortograficznych, interpunkcyjnych i literówek — by Twój tekst zabrzmiał czysto i profesjonalnie.",
-    bullets: ["Ortografia i interpunkcja", "Literówki i powtórzenia", "Spójność zapisu"],
+      "Architektura i logika tekstu. Wydobywam jasność przekazu, koryguję nieścisłości logiczne i leksykalne, czuwam nad właściwym rytmem zdań i płynnością narracji – tak, by Twój styl wybrzmiał z pełną mocą, a Twoja wizja zyskała wyrazistość.",
+    bullets: ["Spójna konstrukcja", "Naturalny flow", "Głębia autorskiego stylu"],
   },
   {
     n: "02",
     icon: <Feather size={22} strokeWidth={1.5} />,
-    title: "Redakcja",
+    title: "Korekta",
     desc:
-      "Praca nad stylem, strukturą i logiką tekstu. Doskonalę rytm zdań, jasność przekazu i siłę argumentacji.",
-    bullets: ["Styl i język", "Kompozycja i logika", "Spójność narracyjna"],
+      "Precyzja i czystość językowa. Eliminuję usterki gramatyczne, interpunkcyjne i literówki. Dbam o nienaganną poprawność, dzięki czemu Twój przekaz trafia do odbiorców w doskonałej formie.",
+    bullets: ["Językowa precyzja", "Czystość zapisu", "Pełne skupienie na treści"],
   },
   {
     n: "03",
     icon: <BookOpen size={22} strokeWidth={1.5} />,
-    title: "Skład i druk",
+    title: "Korekta po składzie (PDF)",
     desc:
-      "Kompleksowa pomoc wydawnicza — od redakcji, przez korektę po skład tekstu i przygotowanie do druku.",
-    bullets: ["Skład typograficzny", "Łamanie kolumn", "Przygotowanie pliku do druku"],
+      "Ostatnia prosta przed publikacją. Weryfikuję układ typograficzny, podział słów oraz estetykę łamania tekstu – dbając o to, by słowa prezentowały się doskonale w finalnym formacie publikacji.",
+    bullets: ["Typograficzna czujność", "Oko do detali", "Bezpieczeństwo przed drukiem"],
+  },
+  {
+    n: "04",
+    icon: <SearchCheck size={22} strokeWidth={1.5} />,
+    title: "Rewizja",
+    desc:
+      "Weryfikacja i ostateczny audyt tekstu. Sprawdzam poprawność wdrożenia sugerowanych poprawek i upewniam się, czy tekst zachował swoją integralność – tak, aby dać Ci pewność, że Twoja publikacja jest zapisana doskonale.",
+    bullets: ["Ostateczny audyt", "Spójność zmian", "Twoja pewność i pełny spokój"],
   },
 ];
 
@@ -152,15 +161,7 @@ const Header = ({ onMobileToggle, mobileOpen }) => {
               {n.label}
             </a>
           ))}
-          <a
-            href="#wycena"
-            className="btn btn-gold"
-            onClick={(e) => handleNav(e, "wycena")}
-            data-testid="cta-quote-header"
-          >
-            Bezpłatna wycena
-            <ArrowRight size={16} strokeWidth={2} />
-          </a>
+
         </nav>
         <button
           className="hamburger"
@@ -214,24 +215,21 @@ const Hero = () => {
   };
   return (
     <section id="top" className="hero" data-testid="hero-section">
-      <span className="hero-corner" aria-hidden="true">Sd</span>
+      <span className="hero-corner" aria-hidden="true"></span>
       <div className="hero-grid">
         <div className="reveal">
           <div className="hero-kicker">Profesjonalna redakcja & korekta</div>
           <h1>
             Twoje słowa
             <br />
-            w <em>perfekcyjnym</em> wydaniu.
+            w <em>perfekcyjnym</em> wydaniu
           </h1>
           <p className="lead">
-            Specjalizuję się w profesjonalnej redakcji i korekcie tekstów —
-            od powieści, przez prace naukowe, po publikacje branżowe.
-            Każde zdanie traktuję z troską i precyzją, jakiej zasługuje
-            dobra polszczyzna.
+            Specjalizuję się w profesjonalnej redakcji i korekcie tekstów. Każde słowo traktuję z troską i precyzją, na jakie zasługuje Twoja autorska wizja.
           </p>
           <div className="hero-cta">
             <button onClick={goToQuote} className="btn btn-gold btn-large" data-testid="hero-cta-primary">
-              Bezpłatna wycena w 24h
+              Bezpłatna wycena
               <ArrowRight size={18} strokeWidth={2} />
             </button>
             <a
@@ -246,7 +244,7 @@ const Hero = () => {
               Poznaj ofertę
             </a>
           </div>
-          <div className="hero-meta">
+          {/* <div className="hero-meta">
             <div className="meta-item">
               <div className="num">12+</div>
               <div className="lbl">Lat doświadczenia</div>
@@ -259,7 +257,7 @@ const Hero = () => {
               <div className="num">24h</div>
               <div className="lbl">Czas na wycenę</div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="hero-visual reveal" data-testid="hero-visual">
           <img
@@ -268,7 +266,7 @@ const Hero = () => {
             loading="eager"
           />
           <div className="stamp">
-            „Słowo dobrze postawione waży więcej niż tysiąc napisanych pośpiesznie."
+            Słowo ma swoją wagę – zadbajmy o to, by wybrzmiało doskonale
           </div>
         </div>
       </div>
@@ -283,13 +281,11 @@ const Offer = () => (
         <div>
           <div className="eyebrow">Oferta</div>
           <h2 className="section-title">
-            Trzy filary mojej pracy<br />nad Twoim tekstem.
+            Droga do doskonałego tekstu
           </h2>
         </div>
         <p className="section-sub">
-          Dobieram zakres usług indywidualnie — od pojedynczej korekty,
-          po pełną redakcję wraz ze składem i przygotowaniem publikacji
-          do druku. Zawsze z poszanowaniem Twojego głosu i stylu.
+          Zawsze pracuję w pełnym poszanowaniu Twojego stylu i autorskiego zamysłu. Możemy podjąć współpracę na dowolnym z poniższych etapów, jak również połączyć je w spójny proces wydawniczy.
         </p>
       </div>
       <div className="offer-grid">
@@ -327,24 +323,27 @@ const About = () => (
       <div className="about-text reveal">
         <div className="eyebrow">O mnie</div>
         <h2>
-          Pasja do języka,<br />
-          <em>uważność</em> do każdego słowa.
+          Pasja do odkrywania,<br />
+          <em>uważność</em> na słowo,<br />pełne wsparcie
         </h2>
         <p>
-          Od kilkunastu lat pomagam autorom, wydawcom i firmom dopracować
-          ich teksty do najwyższego poziomu. Wierzę, że dobry redaktor
-          jest niewidzialny — czytelnik czuje tylko, że wszystko gra.
+          Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że praca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobywania z tekstu jego najlepszej formy.
         </p>
         <p>
-          Ukończyłam filologię polską na Uniwersytecie Jagiellońskim oraz
-          studia podyplomowe z edytorstwa. Pracowałam z literaturą piękną,
-          poezją, publicystyką, tekstami naukowymi i komercyjnymi.
-          Dla mnie każdy tekst zasługuje na ten sam szacunek.
+          Tworzę bezpieczną przestrzeń dla Twojego głosu, tak aby wybrzmiał z pełną mocą. Pomogę Ci wydobyć harmonię, piękno i mocny przekaz, które już tkwią w Twoich słowach. Niezależnie od tego, czy pracuję nad literaturą piękną, publicystyką, tekstem naukowym czy komercyjnym – zawsze dbam o to, by Twój tekst był zapisany doskonale.
         </p>
         <p>
-          Nie poprawiam — doskonalę. To różnica, którą czuje się przy
-          pierwszym czytaniu gotowego tekstu.
+          W procesie twórczym staję się Twoim partnerem i pierwszym, wspierającym czytelnikiem. Dbam o to, by tekst w pełni zachował Twoje pisarskie DNA. Podkreślam to, co w Twoim stylu najpiękniejsze, i z wyczuciem koryguję to, co mogłoby rozpraszać w trakcie lektury. Pracuję w trybie śledzenia zmian – nigdy nie podejmuję decyzji sama, bo to do Ciebie należy ostateczny głos. Szanuję każde Twoje słowo, dlatego nie przepisuję zdań na nowo, lecz szlifuję je z najwyższą uważnością. 
         </p>
+        <p>
+        Mój atut to umiejętność spojrzenia na słowa ze świeżej, redaktorskiej oraz czytelniczej perspektywy i dostrzeżenia niuansów, które łatwo przeoczyć, będąc bardzo blisko własnego tekstu. Finalnie na tej drodze najważniejsza jest dla mnie Twoja duma oraz zachwyt Twoich odbiorców.
+          </p>
+          <p>
+        Po odłożeniu arkuszy wydawniczych z równą pasją odkrywam świat i ludzi. Poznaję ich zarówno w domowym zaciszu – podczas spotkań przy planszówkach, na kartach książek i w dobrym kinie – jak i w podróży, tej dalekiej i tej zupełnie bliskiej. Zachwycam się surowym pięknem natury oraz genialnymi osiągnięciami człowieka w architekturze, muzyce i literaturze. Z ciekawością słucham opowieści o życiu i marzeniach. Lubię zwiedzać świat na rowerze, a każdą wyprawę z radością wieńczę smakowaniem lokalnej kuchni i pysznych łakoci.
+          </p>
+          <p>
+        Wierzę, że współpraca przy Twoim tekście to osobna, wyjątkowa podróż. Zapraszam Cię do wspólnego projektu – stwórzmy przestrzeń, w której Twoje słowa zyskają należną im uwagę.
+          </p>
         <div className="signature">
           Agnieszka Kozak
           <small>Redaktor i korektor</small>
@@ -456,19 +455,43 @@ const Quote = () => {
       <div className="quote-inner reveal">
         <div className="eyebrow" style={{ justifyContent: "center" }}>Bezpłatna wycena</div>
         <h2>
-          Każdy tekst jest <em>inny</em>.<br />
-          Twoja wycena też taka będzie.
+          Zaufanie to podstawa dobrej współpracy. Poznaj mój warsztat dzięki darmowej próbce
+          
         </h2>
         <div className="quote-divider" />
         <p>
-          Napisz do mnie, załącz fragment lub podaj liczbę znaków, a przygotuję
-          dla Ciebie indywidualną, bezpłatną wycenę w ciągu 24 godzin.
-          Bez zobowiązań, bez ukrytych kosztów — tylko konkretna odpowiedź.
+         Każdy tekst to unikalna historia, która wymaga indywidualnego podejścia i wzajemnego zaufania. Chcę mieć pewność, że moje wsparcie w pełni odpowie na Twoje potrzeby, a Ty będziesz czuć się bezpiecznie w każdym momencie pracy nad tekstem.
+<p />
+Dlatego na początek zapraszam Cię do niezobowiązującego kroku:
+<p />
+
+1. Prześlij mi krótki fragment swojego tekstu (wystarczą 1–2 strony, najlepiej ze środka materiału, w formacie .docx).
+<br />
+
+2. Przygotuję dla Ciebie bezpłatną próbkę redakcji i/lub korekty. Dzięki temu zobaczysz mój styl w praktyce i sprawdzisz, jak czujesz się z moimi sugestiami.
+<br />
+
+3. Podejmiemy decyzję. Jeśli wspólnie zdecydujemy, że to właściwy kierunek i nasza wizja współpracy się pokrywa, poproszę Cię o przesłanie całości materiału.
+<br />
+
+4. Otrzymasz dedykowaną wycenę oraz harmonogram prac dostosowany do Twojego projektu.
+<p />
+
+Napisz do mnie i opowiedz kilka słów o tym, co tworzysz. Sprawdźmy, jak możemy sprawić, by Twoje słowa były zapisane doskonale.
         </p>
-        <button onClick={goContact} className="btn btn-gold btn-large" data-testid="quote-cta">
+        <a href="mailto:agnieszka.kozak@slowadoskonale.pl" data-testid="contact-email">
+          <button className="btn btn-gold btn-large" data-testid="hero-cta-primary">
+            <Send size={18} strokeWidth={2} />
+            Wyślij zapytanie
+          </button>
+        </a>
+
+        {/* <button onClick={goContact} className="btn btn-gold btn-large" data-testid="quote-cta">
           <Send size={18} strokeWidth={2} />
           Wyślij zapytanie
-        </button>
+        </button> */}
+
+
       </div>
     </section>
   );
@@ -544,11 +567,7 @@ const Contact = () => {
 
         <aside className="contact-info reveal">
           <div className="eyebrow">Kontakt</div>
-          <h3>Porozmawiajmy o Twoim tekście.</h3>
-          <p>
-            Odpowiadam zwykle tego samego dnia. Jeśli wolisz krótką rozmowę
-            — chętnie umówię się telefonicznie, bez pośpiechu.
-          </p>
+
           <ul className="info-list">
             <li>
               <div className="info-icon"><Mail size={18} /></div>
