@@ -34,6 +34,10 @@ body {
   line-height: 1.6;
 }
 
+p, h1, h2, h3, li {
+  text-wrap: pretty;
+}
+
 .serif {
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 500;
@@ -402,8 +406,11 @@ body {
 }
 .offer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;      /* Odstęp między kafelkami w poziomie i pionie */
+  width: 100%;    /* Rozciąga siatkę na pełną szerokość kontenera */
+  max-width: none;/* Usuwa ewentualne sztuczne zwężenie siatki */
+  margin: 0;      /* Zeruje ewentualne marginesy boczne */
 }
 .offer-card {
   background: var(--bone);
@@ -623,7 +630,7 @@ body {
 }
 .t-track::-webkit-scrollbar { display: none; }
 
-.t-card {
+/* .t-card {
   flex: 0 0 380px;
   scroll-snap-align: start;
   background: rgba(249,249,247,0.04);
@@ -632,7 +639,58 @@ body {
   padding: 40px 32px;
   position: relative;
   transition: background-color 320ms ease, border-color 320ms ease, transform 320ms ease;
+} */
+
+.t-card {
+  flex: 0 0 380px;
+  scroll-snap-align: start;
+  background: rgba(249, 249, 247, 0.04);
+  border: 1px solid rgba(249, 249, 247, 0.1);
+  border-radius: 4px;
+  padding: 40px 32px;
+  position: relative;
+  transition: background-color 320ms ease, border-color 320ms ease, transform 320ms ease;
+  
+  /* UKŁAD FLEXBOX — Wyrównuje autora do dolnej krawędzi kafelka */
+  display: flex;
+  flex-direction: column;
 }
+
+/* Wypychamy dolną część (autora) na sam dół kafelka */
+.t-card .t-author {
+  margin-top: auto; 
+}
+
+/* Odstęp dla tekstu cytatu */
+.t-quote {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--bone);
+  margin: 0 0 24px;
+  letter-spacing: 0.005em;
+}
+
+/* Przycisk rozwijania długiego tekstu */
+.t-expand-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-top: -12px;
+  margin-bottom: 24px;
+  text-align: left;
+  text-decoration: underline;
+  align-self: flex-start;
+}
+.t-expand-btn:hover {
+  color: var(--gold-soft);
+}
+
 .t-card:hover {
   background-color: rgba(249,249,247,0.07);
   border-color: rgba(212,175,55,0.4);
@@ -691,12 +749,12 @@ body {
 .quote {
   padding: 130px 24px;
   background: var(--bone);
-  text-align: center;
   position: relative;
 }
 .quote-inner {
   max-width: 760px;
   margin: 0 auto;
+  text-align: center; /* Wyśrodkowuje nagłówek i przycisk */
 }
 .quote h2 {
   font-family: "Playfair Display", serif;
@@ -707,22 +765,54 @@ body {
   margin: 18px 0 26px;
   letter-spacing: -0.015em;
 }
-.quote h2 em {
-  font-style: italic;
-  color: var(--gold-dark);
-}
-.quote p {
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: var(--ink-muted);
-  margin: 0 auto 40px;
-  max-width: 620px;
-}
 .quote-divider {
   width: 1px;
   height: 64px;
   background: var(--gold);
-  margin: 0 auto 32px;
+  margin: 0 auto 36px;
+}
+
+/* Blok tekstu i lista wyrównane do lewej */
+.quote-text {
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  max-width: 680px;
+  margin: 0 auto 44px;
+}
+
+.quote-text p {
+  margin-bottom: 20px;
+}
+
+/* Wyrównana lista kroków z automatyczną numeracją */
+.quote-steps {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
+  counter-reset: step-counter;
+}
+
+.quote-steps li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+}
+
+/* Złote, eleganckie numery 1., 2., 3., 4. */
+.quote-steps li::before {
+  content: counter(step-counter) ".";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--gold-dark);
 }
 
 /* ============================

@@ -73,7 +73,7 @@ const TESTIMONIALS = [
     name: "Hubert Jankowski",
     role: "Autor autobiografii",
     quote:
-      "Miałem przyjemność współpracować z Panią Agnieszką. Jako osoba niewidoma, spotykam się z wyzwaniami wynikającymi z dostosowania procesów pracy do moich potrzeb, a Pani Agnieszka wykazała się nie tylko wysokim poziomem profesjonalizmu, ale również empatią i elastycznością, co pozwoliło nam wspólnie wypracować skuteczne metody pracy. Dzięki jej otwartości i umiejętności dostosowania komunikacji, mogłem w pełni angażować się w proces redakcyjny. Pani Agnieszka cechuje się doskonałą dbałością o szczegóły, terminowością oraz umiejętnością skutecznego rozwiązywania problemów, co przekładało się na wysoką jakość efektów naszej pracy. Współpraca z Panią Agnieszką była nie tylko bardzo efektywna, ale również przyjemna. Zdecydowanie polecam jej usługi każdemu, kto poszukuje rzetelnego, zaangażowanego i wrażliwego redaktora.",
+      "Miałem ogromną przyjemność współpracować z Panią Agnieszką w ramach inicjatywy parowania twórców z korektorami, a nasza relacja zawodowa szybko objęła kompleksową redakcję i korektę moich kluczowych projektów. Pani Agnieszka wspierała mnie zarówno przy bieżącym szlifowaniu artykułów i wpisów na bloga, jak i na wymagającym etapie pracy nad książką. Co niezwykle ważne, nasza współpraca nie zakończyła się wraz z domknięciem pierwszego projektu. Kontynuujemy ją do dziś, a każdy kolejny etap stoi na równie wysokim, niezmiennym poziomie. Jako osoba niewidoma na co dzień mierzę się z koniecznością dostosowania narzędzi i procesów komunikacji. Pani Agnieszka wykazała się w tym zakresie nie tylko najwyższym poziomem warsztatowego profesjonalizmu, ale również wybitną empatią, otwartością oraz elastycznością. Sprawnie wypracowaliśmy model pracy oparty na bezbłędnym zrozumieniu moich potrzeb, co pozwoliło mi na pełny i komfortowy udział w każdym etapie redakcji. Panią Agnieszkę wyróżnia wyjątkowa dbałość o detale językowe, wyczucie stylu, terminowość oraz zdolność do szybkiego rozwiązywania wyzwań edytorskich. Każdy tekst po jej redakcji zyskiwał na przejrzystości, płynności i wyrazistości, nie tracąc przy tym mojego indywidualnego głosu. Precyzja językowa i doskonała kultura pracy sprawiają, że współpraca z nią to gwarancja najwyższej jakości oraz pełnego spokoju o efekt końcowy. Z pełnym przekonaniem polecam usługi Pani Agnieszki każdemu autorowi, który poszukuje redaktora rzetelnego, niezwykle zaangażowanego i potrafiącego budować partnerstwo oparte na wzajemnym szacunku. Jestem wdzięczny za dotychczasowe efekty naszej wspólnej pracy i z przyjemnością powierzę jej kolejne projekty.",
   },
   {
     name: "Andrzej Zalewski",
@@ -166,6 +166,38 @@ const Header = ({ onMobileToggle, mobileOpen }) => {
   );
 };
 
+// const MobilePanel = ({ open, onClose }) => {
+//   const handleNav = (e, id) => {
+//     e.preventDefault();
+//     const el = document.getElementById(id);
+//     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+//     onClose();
+//   };
+//   return (
+//     <div className={`mobile-panel ${open ? "open" : ""}`} data-testid="mobile-panel">
+//       {NAV.map((n) => (
+//         <a
+//           key={n.id}
+//           href={`#${n.id}`}
+//           onClick={(e) => handleNav(e, n.id)}
+//           data-testid={`mobile-nav-${n.id}`}
+//         >
+//           {n.label}
+//         </a>
+//       ))}
+//       <a
+//         href="#wycena"
+//         className="btn btn-gold"
+//         onClick={(e) => handleNav(e, "wycena")}
+//         data-testid="mobile-cta-quote"
+//       >
+//         Bezpłatna wycena
+//         <ArrowRight size={16} strokeWidth={2} />
+//       </a>
+//     </div>
+//   );
+// };
+
 const MobilePanel = ({ open, onClose }) => {
   const handleNav = (e, id) => {
     e.preventDefault();
@@ -185,15 +217,6 @@ const MobilePanel = ({ open, onClose }) => {
           {n.label}
         </a>
       ))}
-      <a
-        href="#wycena"
-        className="btn btn-gold"
-        onClick={(e) => handleNav(e, "wycena")}
-        data-testid="mobile-cta-quote"
-      >
-        Bezpłatna wycena
-        <ArrowRight size={16} strokeWidth={2} />
-      </a>
     </div>
   );
 };
@@ -343,6 +366,135 @@ const About = () => (
   </section>
 );
 
+// const Testimonials = () => {
+//   const trackRef = useRef(null);
+//   const [canPrev, setCanPrev] = useState(false);
+//   const [canNext, setCanNext] = useState(true);
+
+//   const updateButtons = () => {
+//     const el = trackRef.current;
+//     if (!el) return;
+//     setCanPrev(el.scrollLeft > 4);
+//     setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+//   };
+
+//   useEffect(() => {
+//     updateButtons();
+//     const el = trackRef.current;
+//     if (!el) return;
+//     el.addEventListener("scroll", updateButtons, { passive: true });
+//     window.addEventListener("resize", updateButtons);
+//     return () => {
+//       el.removeEventListener("scroll", updateButtons);
+//       window.removeEventListener("resize", updateButtons);
+//     };
+//   }, []);
+
+//   const scrollBy = (dir) => {
+//     const el = trackRef.current;
+//     if (!el) return;
+//     const card = el.querySelector(".t-card");
+//     const step = card ? card.getBoundingClientRect().width + 28 : el.clientWidth * 0.8;
+//     el.scrollBy({ left: dir * step, behavior: "smooth" });
+//   };
+
+//   return (
+//     <section id="opinie" className="section testimonials" data-testid="testimonials-section">
+//       <div className="container">
+//         <div className="t-head reveal">
+//           <div>
+//             <div className="eyebrow">Opinie twórców</div>
+//             <h2 className="section-title">Słowa, które do mnie wracają</h2>
+//             <p className="section-sub">
+//               Najpiękniejsze rekomendacje to te, w których czuć ulgę
+//               i dumę autorów z gotowego tekstu.
+//             </p>
+//           </div>
+//           <div className="t-controls" aria-label="Nawigacja opinii">
+//             <button
+//               type="button"
+//               className="t-arrow"
+//               onClick={() => scrollBy(-1)}
+//               disabled={!canPrev}
+//               aria-label="Poprzednia opinia"
+//               data-testid="testimonials-prev"
+//             >
+//               <ArrowLeft size={18} />
+//             </button>
+//             <button
+//               type="button"
+//               className="t-arrow"
+//               onClick={() => scrollBy(1)}
+//               disabled={!canNext}
+//               aria-label="Następna opinia"
+//               data-testid="testimonials-next"
+//             >
+//               <ArrowRight size={18} />
+//             </button>
+//           </div>
+//         </div>
+//         <div className="t-track" ref={trackRef} data-testid="testimonials-track">
+//           {TESTIMONIALS.map((t, i) => (
+//             <article
+//               key={t.name}
+//               className="t-card"
+//               data-testid={`testimonial-card-${i}`}
+//             >
+//               <Stars />
+//               <p className="t-quote">„{t.quote}"</p>
+//               <div className="t-author">
+//                 <div className="t-avatar">
+//                   {t.name.split(" ").map((s) => s[0]).join("")}
+//                 </div>
+//                 <div>
+//                   <div className="t-name">{t.name}</div>
+//                   <div className="t-role">{t.role}</div>
+//                 </div>
+//               </div>
+//             </article>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+const TestimonialCard = ({ t, i }) => {
+  const [expanded, setExpanded] = useState(false);
+  const MAX_LENGTH = 220; // Maksymalna liczba znaków przed skróceniem
+
+  const isLong = t.quote.length > MAX_LENGTH;
+  const displayText = isLong && !expanded 
+    ? `${t.quote.slice(0, MAX_LENGTH).trim()}...` 
+    : t.quote;
+
+  return (
+    <article className="t-card" data-testid={`testimonial-card-${i}`}>
+      <div>
+        <Stars />
+        <p className="t-quote">„{displayText}”</p>
+        {isLong && (
+          <button 
+            className="t-expand-btn" 
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? "Zwiń opinię" : "Czytaj całość"}
+          </button>
+        )}
+      </div>
+      <div className="t-author">
+        <div className="t-avatar">
+          {t.name.split(" ").map((s) => s[0]).join("")}
+        </div>
+        <div>
+          <div className="t-name">{t.name}</div>
+          <div className="t-role">{t.role}</div>
+        </div>
+      </div>
+    </article>
+  );
+};
+
 const Testimonials = () => {
   const trackRef = useRef(null);
   const [canPrev, setCanPrev] = useState(false);
@@ -412,23 +564,7 @@ const Testimonials = () => {
         </div>
         <div className="t-track" ref={trackRef} data-testid="testimonials-track">
           {TESTIMONIALS.map((t, i) => (
-            <article
-              key={t.name}
-              className="t-card"
-              data-testid={`testimonial-card-${i}`}
-            >
-              <Stars />
-              <p className="t-quote">„{t.quote}"</p>
-              <div className="t-author">
-                <div className="t-avatar">
-                  {t.name.split(" ").map((s) => s[0]).join("")}
-                </div>
-                <div>
-                  <div className="t-name">{t.name}</div>
-                  <div className="t-role">{t.role}</div>
-                </div>
-              </div>
-            </article>
+            <TestimonialCard key={t.name} t={t} i={i} />
           ))}
         </div>
       </div>
@@ -449,27 +585,34 @@ const Quote = () => {
           
         </h2>
         <div className="quote-divider" />
-        <p>
-         Każdy tekst to unikalna historia, która wymaga indywidualnego podejścia i wzajemnego zaufania. Chcę mieć pewność, że moje wsparcie w pełni odpowie na Twoje potrzeby, a Ty będziesz czuć się bezpiecznie w każdym momencie pracy nad tekstem.
-<p />
-Dlatego na początek zapraszam Cię do niezobowiązującego kroku:
-<p />
+<div className="quote-text">
+          <p>
+            Każdy tekst to unikalna historia, która wymaga indywidualnego podejścia i wzajemnego zaufania. Chcę mieć pewność, że moje wsparcie w pełni odpowie na Twoje potrzeby, a Ty będziesz czuć się bezpiecznie w każdym momencie pracy nad tekstem.
+          </p>
+          <p>
+            Dlatego na początek zapraszam Cię do niezobowiązującego kroku:
+          </p>
 
-1. Prześlij mi krótki fragment swojego tekstu (wystarczą 1–2 strony, najlepiej ze środka materiału, w formacie .docx).
-<br />
+          <ol className="quote-steps">
+            <li>
+              Prześlij mi krótki fragment swojego tekstu (wystarczą 1–2 strony, najlepiej ze środka materiału, w formacie .docx).
+            </li>
+            <li>
+              Przygotuję dla Ciebie bezpłatną próbkę redakcji i/lub korekty. Dzięki temu zobaczysz mój styl w praktyce i sprawdzisz, jak czujesz się z moimi sugestiami.
+            </li>
+            <li>
+              Podejmiemy decyzję. Jeśli wspólnie zdecydujemy, że to właściwy kierunek i nasza wizja współpracy się pokrywa, poproszę Cię o przesłanie całości materiału.
+            </li>
+            <li>
+              Otrzymasz dedykowaną wycenę oraz harmonogram prac dostosowany do Twojego projektu.
+            </li>
+          </ol>
 
-2. Przygotuję dla Ciebie bezpłatną próbkę redakcji i/lub korekty. Dzięki temu zobaczysz mój styl w praktyce i sprawdzisz, jak czujesz się z moimi sugestiami.
-<br />
+          <p>
+            Napisz do mnie i opowiedz kilka słów o tym, co tworzysz. Sprawdźmy, jak możemy sprawić, by Twoje słowa były zapisane doskonale.
+          </p>
 
-3. Podejmiemy decyzję. Jeśli wspólnie zdecydujemy, że to właściwy kierunek i nasza wizja współpracy się pokrywa, poproszę Cię o przesłanie całości materiału.
-<br />
-
-4. Otrzymasz dedykowaną wycenę oraz harmonogram prac dostosowany do Twojego projektu.
-<p />
-
-Napisz do mnie i opowiedz kilka słów o tym, co tworzysz. Sprawdźmy, jak możemy sprawić, by Twoje słowa były zapisane doskonale.
-        </p>
-        <a href="mailto:agnieszka.kozak@slowadoskonale.pl" data-testid="contact-email">
+        </div>        <a href="mailto:agnieszka.kozak@slowadoskonale.pl" data-testid="contact-email">
           <button className="btn btn-gold btn-large" data-testid="hero-cta-primary">
             <Send size={18} strokeWidth={2} />
             Wyślij zapytanie
@@ -612,6 +755,21 @@ const Footer = () => (
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   useReveal();
+
+  // === AUTOMATYCZNE LIKWIDOWANIE WISZĄCYCH SPÓJNIKÓW (i, z, w, a, o, u) ===
+  useEffect(() => {
+    const fixTextNodes = (node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        // Zamienia spację po wolnostojących literach i, a, o, u, w, z na twardą spację
+        node.nodeValue = node.nodeValue.replace(/\b([iaouwzIAOUWZ])\s+/g, '$1\u00A0');
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE') {
+        node.childNodes.forEach(fixTextNodes);
+      }
+    };
+
+    const root = document.getElementById("root");
+    if (root) fixTextNodes(root);
+  }, []);
 
   // Close mobile menu on resize to desktop
   useEffect(() => {
