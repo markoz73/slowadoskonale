@@ -467,11 +467,32 @@ const About = () => (
 
 const TestimonialCard = ({ t, i }) => {
   const [expanded, setExpanded] = useState(false);
-  const MAX_LENGTH = 220; // Maksymalna liczba znaków przed skróceniem
+  const MAX_LENGTH = 230; // Docelowy limit znaków
+
+  const getShortQuote = (text, maxLength) => {
+    if (text.length <= maxLength) return text;
+
+    const sub = text.slice(0, maxLength);
+
+    // 1. Szukamy końca pełnego zdania (. ! ?) w obrębie limitu
+    const lastSentenceMatch = sub.match(/.*[.!?](?=\s|$)/);
+    if (lastSentenceMatch && lastSentenceMatch[0].length > 70) {
+      // Usuwamy kropkę z końca zdania i dodajemy wielokropek
+      return `${lastSentenceMatch[0].replace(/[.!?]+$/, "")}...`;
+    }
+
+    // 2. Jeśli brak kropki lub zdanie jest bardzo długie, ucinamy na słowie + wielokropek
+    const lastSpace = sub.lastIndexOf(" ");
+    if (lastSpace > 0) {
+      return `${sub.slice(0, lastSpace)}...`;
+    }
+
+    return `${sub}...`;
+  };
 
   const isLong = t.quote.length > MAX_LENGTH;
   const displayText = isLong && !expanded 
-    ? `${t.quote.slice(0, MAX_LENGTH).trim()}...` 
+    ? getShortQuote(t.quote, MAX_LENGTH) 
     : t.quote;
 
   return (
