@@ -41,7 +41,7 @@ const OFFERS = [
     icon: <Feather size={22} strokeWidth={1.5} />,
     title: "Korekta",
     desc:
-      "Precyzja i czystość językowa. Eliminuję usterki gramatyczne, interpunkcyjne i literówki. Dbam o nienaganną poprawność, dzięki czemu Twój przekaz trafia do odbiorców w doskonałej formie.",
+      "Precyzja i czystość językowa. Eliminuję usterki gramatyczne, interpunkcyjne i literówki. Dbam o nienaganną poprawność, dzięki czemu Twój przekaz trafia do odbiorców w bezbłędnej formie.",
     bullets: ["Językowa precyzja", "Czystość zapisu", "Pełne skupienie na treści"],
   },
   {
@@ -57,7 +57,7 @@ const OFFERS = [
     icon: <SearchCheck size={22} strokeWidth={1.5} />,
     title: "Rewizja",
     desc:
-      "Weryfikacja i ostateczny audyt tekstu. Sprawdzam poprawność wdrożenia sugerowanych poprawek i upewniam się, czy tekst zachował swoją integralność – tak, aby dać Ci pewność, że Twoja publikacja jest zapisana doskonale.",
+      "Weryfikacja i ostateczny audyt tekstu. Sprawdzam poprawność wdrożenia sugerowanych poprawek i upewniam się, czy tekst zachował swoją integralność – tak, aby dać Ci pewność, że Twoja publikacja jest gotowa do wydania.",
     bullets: ["Ostateczny audyt", "Spójność zmian", "Twoja pewność i pełny spokój"],
   },
 ];
@@ -73,7 +73,7 @@ const TESTIMONIALS = [
     name: "Hubert Jankowski",
     role: "Autor autobiografii",
     quote:
-      "Miałem ogromną przyjemność współpracować z Panią Agnieszką w ramach inicjatywy parowania twórców z korektorami, a nasza relacja zawodowa szybko objęła kompleksową redakcję i korektę moich kluczowych projektów. Pani Agnieszka wspierała mnie zarówno przy bieżącym szlifowaniu artykułów i wpisów na bloga, jak i na wymagającym etapie pracy nad książką. Co niezwykle ważne, nasza współpraca nie zakończyła się wraz z domknięciem pierwszego projektu. Kontynuujemy ją do dziś, a każdy kolejny etap stoi na równie wysokim, niezmiennym poziomie. Jako osoba niewidoma na co dzień mierzę się z koniecznością dostosowania narzędzi i procesów komunikacji. Pani Agnieszka wykazała się w tym zakresie nie tylko najwyższym poziomem warsztatowego profesjonalizmu, ale również wybitną empatią, otwartością oraz elastycznością. Sprawnie wypracowaliśmy model pracy oparty na bezbłędnym zrozumieniu moich potrzeb, co pozwoliło mi na pełny i komfortowy udział w każdym etapie redakcji. Panią Agnieszkę wyróżnia wyjątkowa dbałość o detale językowe, wyczucie stylu, terminowość oraz zdolność do szybkiego rozwiązywania wyzwań edytorskich. Każdy tekst po jej redakcji zyskiwał na przejrzystości, płynności i wyrazistości, nie tracąc przy tym mojego indywidualnego głosu. Precyzja językowa i doskonała kultura pracy sprawiają, że współpraca z nią to gwarancja najwyższej jakości oraz pełnego spokoju o efekt końcowy. Z pełnym przekonaniem polecam usługi Pani Agnieszki każdemu autorowi, który poszukuje redaktora rzetelnego, niezwykle zaangażowanego i potrafiącego budować partnerstwo oparte na wzajemnym szacunku. Jestem wdzięczny za dotychczasowe efekty naszej wspólnej pracy i z przyjemnością powierzę jej kolejne projekty.",
+      "Miałem ogromną przyjemność współpracować z Panią Agnieszką w ramach inicjatywy parowania twórców z korektorami, a nasza relacja zawodowa szybko objęła kompleksową redakcję i korektę moich kluczowych projektów. Pani Agnieszka wspierała mnie zarówno przy bieżącym szlifowaniu artykułów i wpisów na bloga, jak i na wymagającym etapie pracy nad książką. Co niezwykle ważne, nasza współpraca nie zakończyła się wraz z domknięciem pierwszego projektu. Kontynuujemy ją do dziś, a każdy kolejny etap stoi na równie wysokim poziomie. Jako osoba niewidoma na co dzień mierzę się z koniecznością dostosowania narzędzi i procesów komunikacji. Pani Agnieszka wykazała się w tym zakresie nie tylko najwyższym poziomem warsztatowego profesjonalizmu, ale również wybitną empatią, otwartością oraz elastycznością. Sprawnie wypracowaliśmy model pracy oparty na bezbłędnym zrozumieniu moich potrzeb, co pozwoliło mi na pełny i komfortowy udział w każdym etapie redakcji. Panią Agnieszkę wyróżnia wyjątkowa dbałość o detale językowe, wyczucie stylu, terminowość oraz zdolność do szybkiego rozwiązywania wyzwań edytorskich. Każdy tekst po jej redakcji zyskiwał na przejrzystości, płynności i wyrazistości, nie tracąc przy tym mojego indywidualnego głosu. Precyzja językowa i doskonała kultura pracy sprawiają, że współpraca z nią to gwarancja najwyższej jakości oraz pełnego spokoju o efekt końcowy. Z pełnym przekonaniem polecam usługi Pani Agnieszki każdemu autorowi, który poszukuje redaktora rzetelnego, niezwykle zaangażowanego i potrafiącego budować partnerstwo oparte na wzajemnym szacunku. Jestem wdzięczny za dotychczasowe efekty naszej wspólnej pracy i z przyjemnością powierzę jej kolejne projekty.",
   },
   {
     name: "Andrzej Zawadzki",
@@ -337,13 +337,19 @@ const About = () => (
         <div className="eyebrow">O mnie</div>
         <h2>
           Pasja do odkrywania,<br />
-          <em>uważność</em> na słowo,<br />pełne wsparcie
+          <em>uważność, </em>pełne wsparcie
         </h2>
+
+        {/* <h2>
+          Pasja,
+          <em> uważność,</em> wsparcie
+        </h2> */}
+
         <p>
-          Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że praca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobywania z tekstu jego najlepszej formy.
+          Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że praca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobycia z tekstu głębi Twojego przekazu.
         </p>
         <p>
-          Tworzę bezpieczną przestrzeń dla Twojego głosu, tak aby wybrzmiał z pełną mocą. Pomogę Ci wydobyć harmonię, piękno i mocny przekaz, które już tkwią w Twoich słowach. Niezależnie od tego, czy pracuję nad literaturą piękną, publicystyką, tekstem naukowym czy komercyjnym – zawsze dbam o to, by Twój tekst był zapisany doskonale.
+          Stworzę bezpieczną przestrzeń dla Twojego głosu, tak aby wybrzmiał z pełną mocą. Pomogę Ci wydobyć harmonię, piękno i mocny przekaz, które już tkwią w Twoich słowach. Niezależnie od tego, czy pracuję nad literaturą piękną, publicystyką, tekstem naukowym czy komercyjnym – zawsze dbam o to, by Twój tekst był zapisany doskonale.
         </p>
         <p>
           W procesie twórczym staję się Twoim partnerem i pierwszym, wspierającym czytelnikiem. Dbam o to, by tekst w pełni zachował Twoje pisarskie DNA. Podkreślam to, co w Twoim stylu najpiękniejsze, i z wyczuciem koryguję to, co mogłoby rozpraszać w trakcie lektury. Pracuję w trybie śledzenia zmian – nigdy nie podejmuję decyzji sama, bo to do Ciebie należy ostateczny głos. Szanuję każde Twoje słowo, dlatego nie przepisuję zdań na nowo, lecz szlifuję je z najwyższą uważnością. 
@@ -478,7 +484,7 @@ const TestimonialCard = ({ t, i }) => {
             className="t-expand-btn" 
             onClick={() => setExpanded(!expanded)}
           >
-            {expanded ? "Zwiń opinię" : "Czytaj całość"}
+            {expanded ? "Zwiń opinię" : "Przeczytaj całość"}
           </button>
         )}
       </div>
