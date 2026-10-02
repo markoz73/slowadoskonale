@@ -76,8 +76,8 @@ const TESTIMONIALS = [
       "Miałem ogromną przyjemność współpracować z Panią Agnieszką w ramach inicjatywy parowania twórców z korektorami, a nasza relacja zawodowa szybko objęła kompleksową redakcję i korektę moich kluczowych projektów. Pani Agnieszka wspierała mnie zarówno przy bieżącym szlifowaniu artykułów i wpisów na bloga, jak i na wymagającym etapie pracy nad książką. Co niezwykle ważne, nasza współpraca nie zakończyła się wraz z domknięciem pierwszego projektu. Kontynuujemy ją do dziś, a każdy kolejny etap stoi na równie wysokim, niezmiennym poziomie. Jako osoba niewidoma na co dzień mierzę się z koniecznością dostosowania narzędzi i procesów komunikacji. Pani Agnieszka wykazała się w tym zakresie nie tylko najwyższym poziomem warsztatowego profesjonalizmu, ale również wybitną empatią, otwartością oraz elastycznością. Sprawnie wypracowaliśmy model pracy oparty na bezbłędnym zrozumieniu moich potrzeb, co pozwoliło mi na pełny i komfortowy udział w każdym etapie redakcji. Panią Agnieszkę wyróżnia wyjątkowa dbałość o detale językowe, wyczucie stylu, terminowość oraz zdolność do szybkiego rozwiązywania wyzwań edytorskich. Każdy tekst po jej redakcji zyskiwał na przejrzystości, płynności i wyrazistości, nie tracąc przy tym mojego indywidualnego głosu. Precyzja językowa i doskonała kultura pracy sprawiają, że współpraca z nią to gwarancja najwyższej jakości oraz pełnego spokoju o efekt końcowy. Z pełnym przekonaniem polecam usługi Pani Agnieszki każdemu autorowi, który poszukuje redaktora rzetelnego, niezwykle zaangażowanego i potrafiącego budować partnerstwo oparte na wzajemnym szacunku. Jestem wdzięczny za dotychczasowe efekty naszej wspólnej pracy i z przyjemnością powierzę jej kolejne projekty.",
   },
   {
-    name: "Andrzej Zalewski",
-    role: "Felietonista",
+    name: "Andrzej Zawadzki",
+    role: "Pisarz",
     quote:
       "Współpracowało się fantastycznie.",
   },
@@ -580,8 +580,8 @@ const Quote = () => {
     <section id="wycena" className="section quote" data-testid="quote-section">
       <div className="quote-inner reveal">
         <div className="eyebrow" style={{ justifyContent: "center" }}>Bezpłatna wycena</div>
-        <h2>
-          Zaufanie to podstawa dobrej współpracy. Poznaj mój warsztat dzięki darmowej próbce
+        <h2 style={{ textAlign: "left" }}>
+          Zaufanie to podstawa dobrej współpracy. Poznaj mój warsztat dzięki bezpłatnej próbce
           
         </h2>
         <div className="quote-divider" />
