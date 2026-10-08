@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import {
@@ -166,37 +167,6 @@ const Header = ({ onMobileToggle, mobileOpen }) => {
   );
 };
 
-// const MobilePanel = ({ open, onClose }) => {
-//   const handleNav = (e, id) => {
-//     e.preventDefault();
-//     const el = document.getElementById(id);
-//     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-//     onClose();
-//   };
-//   return (
-//     <div className={`mobile-panel ${open ? "open" : ""}`} data-testid="mobile-panel">
-//       {NAV.map((n) => (
-//         <a
-//           key={n.id}
-//           href={`#${n.id}`}
-//           onClick={(e) => handleNav(e, n.id)}
-//           data-testid={`mobile-nav-${n.id}`}
-//         >
-//           {n.label}
-//         </a>
-//       ))}
-//       <a
-//         href="#wycena"
-//         className="btn btn-gold"
-//         onClick={(e) => handleNav(e, "wycena")}
-//         data-testid="mobile-cta-quote"
-//       >
-//         Bezpłatna wycena
-//         <ArrowRight size={16} strokeWidth={2} />
-//       </a>
-//     </div>
-//   );
-// };
 
 const MobilePanel = ({ open, onClose }) => {
   const handleNav = (e, id) => {
@@ -237,6 +207,12 @@ const Hero = () => {
             <br />
             w <em>perfekcyjnym</em> wydaniu
           </h1>
+          {/* seo */}
+        {/* <h1>
+          Redakcja i korekta:
+          <br />
+          Twoje słowa w <em>perfekcyjnym</em> wydaniu
+        </h1>           */}
           <p className="lead">
             Specjalizuję się w profesjonalnej redakcji i korekcie tekstów. Każde słowo traktuję z troską i precyzją, na jakie zasługuje Twoja autorska wizja.
           </p>
@@ -257,20 +233,6 @@ const Hero = () => {
               Poznaj ofertę
             </a>
           </div>
-          {/* <div className="hero-meta">
-            <div className="meta-item">
-              <div className="num">12+</div>
-              <div className="lbl">Lat doświadczenia</div>
-            </div>
-            <div className="meta-item">
-              <div className="num">450+</div>
-              <div className="lbl">Zredagowanych książek</div>
-            </div>
-            <div className="meta-item">
-              <div className="num">24h</div>
-              <div className="lbl">Czas na wycenę</div>
-            </div>
-          </div> */}
         </div>
         <div className="hero-visual reveal" data-testid="hero-visual">
           <img
@@ -294,7 +256,9 @@ const Offer = () => (
         <div>
           <div className="eyebrow">Oferta</div>
           <h2 className="section-title">
+            {/* seo */}
             Droga do doskonałego tekstu
+            {/* Redakcja i korekta — droga do doskonałego tekstu */}
           </h2>
         </div>
         <p className="section-sub">
@@ -340,11 +304,6 @@ const About = () => (
           <em>uważność, </em>pełne wsparcie
         </h2>
 
-        {/* <h2>
-          Pasja,
-          <em> uważność,</em> wsparcie
-        </h2> */}
-
         <p>
           Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że praca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobycia z tekstu głębi Twojego przekazu.
         </p>
@@ -371,99 +330,6 @@ const About = () => (
     </div>
   </section>
 );
-
-// const Testimonials = () => {
-//   const trackRef = useRef(null);
-//   const [canPrev, setCanPrev] = useState(false);
-//   const [canNext, setCanNext] = useState(true);
-
-//   const updateButtons = () => {
-//     const el = trackRef.current;
-//     if (!el) return;
-//     setCanPrev(el.scrollLeft > 4);
-//     setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
-//   };
-
-//   useEffect(() => {
-//     updateButtons();
-//     const el = trackRef.current;
-//     if (!el) return;
-//     el.addEventListener("scroll", updateButtons, { passive: true });
-//     window.addEventListener("resize", updateButtons);
-//     return () => {
-//       el.removeEventListener("scroll", updateButtons);
-//       window.removeEventListener("resize", updateButtons);
-//     };
-//   }, []);
-
-//   const scrollBy = (dir) => {
-//     const el = trackRef.current;
-//     if (!el) return;
-//     const card = el.querySelector(".t-card");
-//     const step = card ? card.getBoundingClientRect().width + 28 : el.clientWidth * 0.8;
-//     el.scrollBy({ left: dir * step, behavior: "smooth" });
-//   };
-
-//   return (
-//     <section id="opinie" className="section testimonials" data-testid="testimonials-section">
-//       <div className="container">
-//         <div className="t-head reveal">
-//           <div>
-//             <div className="eyebrow">Opinie twórców</div>
-//             <h2 className="section-title">Słowa, które do mnie wracają</h2>
-//             <p className="section-sub">
-//               Najpiękniejsze rekomendacje to te, w których czuć ulgę
-//               i dumę autorów z gotowego tekstu.
-//             </p>
-//           </div>
-//           <div className="t-controls" aria-label="Nawigacja opinii">
-//             <button
-//               type="button"
-//               className="t-arrow"
-//               onClick={() => scrollBy(-1)}
-//               disabled={!canPrev}
-//               aria-label="Poprzednia opinia"
-//               data-testid="testimonials-prev"
-//             >
-//               <ArrowLeft size={18} />
-//             </button>
-//             <button
-//               type="button"
-//               className="t-arrow"
-//               onClick={() => scrollBy(1)}
-//               disabled={!canNext}
-//               aria-label="Następna opinia"
-//               data-testid="testimonials-next"
-//             >
-//               <ArrowRight size={18} />
-//             </button>
-//           </div>
-//         </div>
-//         <div className="t-track" ref={trackRef} data-testid="testimonials-track">
-//           {TESTIMONIALS.map((t, i) => (
-//             <article
-//               key={t.name}
-//               className="t-card"
-//               data-testid={`testimonial-card-${i}`}
-//             >
-//               <Stars />
-//               <p className="t-quote">„{t.quote}"</p>
-//               <div className="t-author">
-//                 <div className="t-avatar">
-//                   {t.name.split(" ").map((s) => s[0]).join("")}
-//                 </div>
-//                 <div>
-//                   <div className="t-name">{t.name}</div>
-//                   <div className="t-role">{t.role}</div>
-//                 </div>
-//               </div>
-//             </article>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
 
 const TestimonialCard = ({ t, i }) => {
   const [expanded, setExpanded] = useState(false);
@@ -646,12 +512,6 @@ const Quote = () => {
           </button>
         </a>
 
-        {/* <button onClick={goContact} className="btn btn-gold btn-large" data-testid="quote-cta">
-          <Send size={18} strokeWidth={2} />
-          Wyślij zapytanie
-        </button> */}
-
-
       </div>
     </section>
   );
@@ -675,56 +535,7 @@ const Contact = () => {
   return (
     <section id="kontakt" className="section contact" data-testid="contact-section">
       <div className="contact-grid">
-        {/* <form className="form reveal" onSubmit={submit} data-testid="contact-form">
-          <h3>Napisz wiadomość</h3>
-          <div className="field">
-            <label htmlFor="name">Imię</label>
-            <input
-              id="name"
-              type="text"
-              required
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              placeholder="Jak Cię nazywać?"
-              data-testid="form-name"
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              required
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              placeholder="twoj@email.pl"
-              data-testid="form-email"
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="msg">Wiadomość</label>
-            <textarea
-              id="msg"
-              required
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              placeholder="Opisz krótko swój tekst — gatunek, objętość, termin…"
-              data-testid="form-message"
-            />
-          </div>
-          <button type="submit" className="btn btn-gold btn-large" data-testid="form-submit">
-            {sent ? (
-              <>
-                <CheckCircle2 size={18} /> Wysłano — sprawdź pocztę
-              </>
-            ) : (
-              <>
-                <Send size={18} /> Wyślij wiadomość
-              </>
-            )}
-          </button>
-        </form> */}
-
+        
         <aside className="contact-info reveal">
           <div className="eyebrow">Kontakt</div>
 
@@ -745,25 +556,9 @@ const Contact = () => {
                 <a href="tel:+48609620240" data-testid="contact-phone">+48 609 620 240</a>
               </div>
             </li>
-            {/* <li>
-              <div className="info-icon"><Instagram size={18} /></div>
-              <div className="info-text">
-                <div className="lbl">Social media</div>
-                <span>@slowadoskonale</span>
-              </div>
-            </li> */}
+
           </ul>
-          {/* <div className="socials">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-btn" aria-label="Instagram" data-testid="social-instagram">
-              <Instagram size={18} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="social-btn" aria-label="Facebook" data-testid="social-facebook">
-              <Facebook size={18} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-btn" aria-label="LinkedIn" data-testid="social-linkedin">
-              <Linkedin size={18} />
-            </a>
-          </div> */}
+
         </aside>
       </div>
     </section>
@@ -821,6 +616,15 @@ function App() {
       <Quote />
       <Contact />
       <Footer />
+    
+  return (
+    <div className="...">
+      <Header />
+      <main>...</main>
+      <footer>...</footer>
+      <Analytics />
+    </div>
+  );
     </div>
   );
 }
