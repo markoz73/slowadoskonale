@@ -537,7 +537,7 @@ const Contact = () => {
       <div className="contact-grid">
         
         <aside className="contact-info reveal">
-          <div className="eyebrow">Kontakt</div>
+          <h2 className="eyebrow">Kontakt</h2>
 
           <ul className="info-list">
             <li>
