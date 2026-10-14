@@ -294,7 +294,7 @@ const About = () => (
       <div className="about-photo reveal">
         <img
           src="/me.jpeg"
-          alt="Portret redaktorki"
+          alt="Agnieszka Kozak — redaktorka i korektorka tekstów"
         />
       </div>
       <div className="about-text reveal">
