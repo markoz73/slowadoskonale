@@ -331,8 +331,7 @@ const About = () => (
   </section>
 );
 
-const TestimonialCard = ({ t, i }) => {
-  const [expanded, setExpanded] = useState(false);
+const TestimonialCard = ({ t, i, onOpen }) => {
   const MAX_LENGTH = 230;
 
   const getShortQuote = (text, maxLength) => {
@@ -350,9 +349,7 @@ const TestimonialCard = ({ t, i }) => {
   };
 
   const isLong = t.quote.length > MAX_LENGTH;
-  const displayText = isLong && !expanded 
-    ? getShortQuote(t.quote, MAX_LENGTH) 
-    : t.quote;
+  const displayText = isLong ? getShortQuote(t.quote, MAX_LENGTH) : t.quote;
 
   return (
     <article className="t-card" data-testid={`testimonial-card-${i}`}>
@@ -363,9 +360,9 @@ const TestimonialCard = ({ t, i }) => {
           <button 
             type="button"
             className="t-expand-btn" 
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => onOpen(t)}
           >
-            {expanded ? "Zwiń opinię" : "Przeczytaj całość"}
+            Przeczytaj całość
           </button>
         )}
       </div>
@@ -379,6 +376,118 @@ const TestimonialCard = ({ t, i }) => {
         </div>
       </div>
     </article>
+  );
+};
+
+const Testimonials = () => {
+  const trackRef = useRef(null);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+  const [activeReview, setActiveReview] = useState(null); // Obsługa pełnej opinii
+
+  const updateButtons = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    setCanPrev(el.scrollLeft > 4);
+    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    updateButtons();
+    const el = trackRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", updateButtons, { passive: true });
+    window.addEventListener("resize", updateButtons);
+    return () => {
+      el.removeEventListener("scroll", updateButtons);
+      window.removeEventListener("resize", updateButtons);
+    };
+  }, []);
+
+  const scrollBy = (dir) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.querySelector(".t-card");
+    const step = card ? card.getBoundingClientRect().width + 28 : el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  return (
+    <section id="opinie" className="section testimonials" data-testid="testimonials-section">
+      <div className="container">
+        <div className="t-head reveal">
+          <div>
+            <div className="eyebrow">Opinie twórców</div>
+            <h2 className="section-title">Słowa, które do mnie wracają</h2>
+            <p className="section-sub">
+              Najpiękniejsze rekomendacje to te, w których czuć ulgę
+              i dumę autorów z gotowego tekstu.
+            </p>
+          </div>
+          <div className="t-controls" aria-label="Nawigacja opinii">
+            <button
+              type="button"
+              className="t-arrow"
+              onClick={() => scrollBy(-1)}
+              disabled={!canPrev}
+              aria-label="Poprzednia opinia"
+              data-testid="testimonials-prev"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              type="button"
+              className="t-arrow"
+              onClick={() => scrollBy(1)}
+              disabled={!canNext}
+              aria-label="Następna opinia"
+              data-testid="testimonials-next"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+        <div className="t-track" ref={trackRef} data-testid="testimonials-track">
+          {TESTIMONIALS.map((t, i) => (
+            <TestimonialCard 
+              key={t.name} 
+              t={t} 
+              i={i} 
+              onOpen={(review) => setActiveReview(review)} 
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Okienko pełnej opinii dopasowane do designu strony */}
+      {activeReview && (
+        <div className="t-modal-overlay" onClick={() => setActiveReview(null)}>
+          <div className="t-modal" onClick={(e) => e.stopPropagation()}>
+            <button 
+              type="button" 
+              className="t-modal-close" 
+              onClick={() => setActiveReview(null)}
+              aria-label="Zamknij"
+            >
+              ✕
+            </button>
+            <Stars />
+            <div className="t-modal-quote">
+              „{activeReview.quote}”
+            </div>
+            <div className="t-author">
+              <div className="t-avatar">
+                {activeReview.name.split(" ").map((s) => s[0]).join("")}
+              </div>
+              <div>
+                <div className="t-name">{activeReview.name}</div>
+                <div className="t-role">{activeReview.role}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 
