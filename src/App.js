@@ -616,15 +616,7 @@ function App() {
       <Quote />
       <Contact />
       <Footer />
-    
-  return (
-    <div className="...">
-      <Header />
-      <main>...</main>
-      <footer>...</footer>
       <Analytics />
-    </div>
-  );
     </div>
   );
 }
