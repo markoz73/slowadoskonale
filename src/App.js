@@ -333,21 +333,18 @@ const About = () => (
 
 const TestimonialCard = ({ t, i }) => {
   const [expanded, setExpanded] = useState(false);
-  const MAX_LENGTH = 230; // Docelowy limit znaków
+  const MAX_LENGTH = 230;
 
   const getShortQuote = (text, maxLength) => {
     if (text.length <= maxLength) return text;
 
     const sub = text.slice(0, maxLength);
 
-    // 1. Szukamy końca pełnego zdania (. ! ?) w obrębie limitu
     const lastSentenceMatch = sub.match(/.*[.!?](?=\s|$)/);
     if (lastSentenceMatch && lastSentenceMatch[0].length > 70) {
-      // Usuwamy kropkę z końca zdania i dodajemy wielokropek
       return `${lastSentenceMatch[0].replace(/[.!?]+$/, "")}...`;
     }
 
-    // 2. Jeśli brak kropki lub zdanie jest bardzo długie, ucinamy na słowie + wielokropek
     const lastSpace = sub.lastIndexOf(" ");
     if (lastSpace > 0) {
       return `${sub.slice(0, lastSpace)}...`;
@@ -361,6 +358,12 @@ const TestimonialCard = ({ t, i }) => {
     ? getShortQuote(t.quote, MAX_LENGTH) 
     : t.quote;
 
+  const handleToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setExpanded((prev) => !prev);
+  };
+
   return (
     <article className="t-card" data-testid={`testimonial-card-${i}`}>
       <div>
@@ -368,8 +371,10 @@ const TestimonialCard = ({ t, i }) => {
         <p className="t-quote">„{displayText}”</p>
         {isLong && (
           <button 
+            type="button"
             className="t-expand-btn" 
-            onClick={() => setExpanded(!expanded)}
+            onClick={handleToggle}
+            onTouchEnd={handleToggle}
           >
             {expanded ? "Zwiń opinię" : "Przeczytaj całość"}
           </button>
