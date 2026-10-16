@@ -673,7 +673,6 @@ p, h1, h2, h3, li {
 }
 
 /* Przycisk rozwijania długiego tekstu */
-/* Przycisk rozwijania długiego tekstu */
 .t-expand-btn {
   background: none;
   border: none;
@@ -681,15 +680,20 @@ p, h1, h2, h3, li {
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 8px 0; /* Zwiększony obszar dotykowy */
+  padding: 10px 0;
   margin-top: -12px;
   margin-bottom: 24px;
   text-align: left;
   text-decoration: underline;
   align-self: flex-start;
-  touch-action: manipulation; /* Zapobiega opóźnieniom i konfliktom gestów dotykowych */
+  
+  /* Naprawa obsługi dotyku na mobilkach: */
+  position: relative;
+  z-index: 10;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
+
 .t-expand-btn:hover {
   color: var(--gold-soft);
 }

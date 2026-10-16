@@ -358,12 +358,6 @@ const TestimonialCard = ({ t, i }) => {
     ? getShortQuote(t.quote, MAX_LENGTH) 
     : t.quote;
 
-  const handleToggle = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setExpanded((prev) => !prev);
-  };
-
   return (
     <article className="t-card" data-testid={`testimonial-card-${i}`}>
       <div>
@@ -373,8 +367,7 @@ const TestimonialCard = ({ t, i }) => {
           <button 
             type="button"
             className="t-expand-btn" 
-            onClick={handleToggle}
-            onTouchEnd={handleToggle}
+            onClick={() => setExpanded((prev) => !prev)}
           >
             {expanded ? "Zwiń opinię" : "Przeczytaj całość"}
           </button>
