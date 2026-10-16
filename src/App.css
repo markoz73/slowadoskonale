@@ -556,13 +556,15 @@ p, h1, h2, h3, li {
   margin: 0 0 18px;
   font-size: 1rem;
 }
+
 .signature {
   margin-top: 32px;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 26px;
+  font-family: "Alex Brush", serif;
+  font-size: 40px;
   color: var(--navy);
 }
+
+
 .signature small {
   display: block;
   font-family: "Montserrat", sans-serif;

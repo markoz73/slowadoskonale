@@ -34,7 +34,7 @@ const OFFERS = [
     icon: <PenLine size={22} strokeWidth={1.5} />,
     title: "Redakcja",
     desc:
-      "Architektura i logika tekstu. Wydobywam jasność przekazu, koryguję nieścisłości logiczne i leksykalne, czuwam nad właściwym rytmem zdań i płynnością narracji – tak, by Twój styl wybrzmiał z pełną mocą, a Twoja wizja zyskała wyrazistość.",
+      "Architektura i logika tekstu. Wydobywam jasność przekazu, koryguję nieścisłości logiczne i leksykalne, czuwam nad właściwym rytmem zdań i płynnością narracji – tak, by Twój styl zyskał wyrazistość, a Twoja wizja wybrzmiała z pełną mocą.",
     bullets: ["Spójna konstrukcja", "Naturalny flow", "Głębia autorskiego stylu"],
   },
   {
@@ -50,7 +50,7 @@ const OFFERS = [
     icon: <BookOpen size={22} strokeWidth={1.5} />,
     title: "Korekta po składzie (PDF)",
     desc:
-      "Ostatnia prosta przed publikacją. Weryfikuję układ typograficzny, podział słów oraz estetykę łamania tekstu – dbając o to, by słowa prezentowały się doskonale w finalnym formacie publikacji.",
+      "Analiza optyczna i czyszczenie przeoczeń. Weryfikuję układ typograficzny, podział słów oraz estetykę łamania tekstu – dbając o to, by słowa prezentowały się doskonale w finalnym formacie publikacji.",
     bullets: ["Typograficzna czujność", "Oko do detali", "Bezpieczeństwo przed drukiem"],
   },
   {
@@ -72,7 +72,7 @@ const TESTIMONIALS = [
   },
     {
     name: "Hubert Jankowski",
-    role: "Autor autobiografii",
+    role: "Autor artykułów naukowych, bloga i autobiografii",
     quote:
       "Miałem ogromną przyjemność współpracować z Panią Agnieszką w ramach inicjatywy parowania twórców z korektorami, a nasza relacja zawodowa szybko objęła kompleksową redakcję i korektę moich kluczowych projektów. Pani Agnieszka wspierała mnie zarówno przy bieżącym szlifowaniu artykułów i wpisów na bloga, jak i na wymagającym etapie pracy nad książką. Co niezwykle ważne, nasza współpraca nie zakończyła się wraz z domknięciem pierwszego projektu. Kontynuujemy ją do dziś, a każdy kolejny etap stoi na równie wysokim poziomie. Jako osoba niewidoma na co dzień mierzę się z koniecznością dostosowania narzędzi i procesów komunikacji. Pani Agnieszka wykazała się w tym zakresie nie tylko najwyższym poziomem warsztatowego profesjonalizmu, ale również wybitną empatią, otwartością oraz elastycznością. Sprawnie wypracowaliśmy model pracy oparty na bezbłędnym zrozumieniu moich potrzeb, co pozwoliło mi na pełny i komfortowy udział w każdym etapie redakcji. Panią Agnieszkę wyróżnia wyjątkowa dbałość o detale językowe, wyczucie stylu, terminowość oraz zdolność do szybkiego rozwiązywania wyzwań edytorskich. Każdy tekst po jej redakcji zyskiwał na przejrzystości, płynności i wyrazistości, nie tracąc przy tym mojego indywidualnego głosu. Precyzja językowa i doskonała kultura pracy sprawiają, że współpraca z nią to gwarancja najwyższej jakości oraz pełnego spokoju o efekt końcowy. Z pełnym przekonaniem polecam usługi Pani Agnieszki każdemu autorowi, który poszukuje redaktora rzetelnego, niezwykle zaangażowanego i potrafiącego budować partnerstwo oparte na wzajemnym szacunku. Jestem wdzięczny za dotychczasowe efekty naszej wspólnej pracy i z przyjemnością powierzę jej kolejne projekty.",
   },
@@ -80,7 +80,7 @@ const TESTIMONIALS = [
     name: "Andrzej Zawadzki",
     role: "Pisarz",
     quote:
-      "Współpracowało się fantastycznie.",
+      "Współpracowało się fantastycznie!",
   },
   {
     name: "Biuro Rachunkowe",
@@ -202,17 +202,17 @@ const Hero = () => {
       <div className="hero-grid">
         <div className="reveal">
           <div className="hero-kicker">Profesjonalna redakcja & korekta</div>
-          <h1>
+          {/* <h1>
             Twoje słowa
             <br />
             w <em>perfekcyjnym</em> wydaniu
-          </h1>
+          </h1> */}
           {/* seo */}
-        {/* <h1>
-          Redakcja i korekta:
+        <h1>
+          Redakcja i korekta.
           <br />
           Twoje słowa w <em>perfekcyjnym</em> wydaniu
-        </h1>           */}
+        </h1>          
           <p className="lead">
             Specjalizuję się w profesjonalnej redakcji i korekcie tekstów. Każde słowo traktuję z troską i precyzją, na jakie zasługuje Twoja autorska wizja.
           </p>
@@ -257,8 +257,8 @@ const Offer = () => (
           <div className="eyebrow">Oferta</div>
           <h2 className="section-title">
             {/* seo */}
-            Droga do doskonałego tekstu
-            {/* Redakcja i korekta — droga do doskonałego tekstu */}
+            {/* Droga do doskonałego tekstu */}
+            Redakcja i korekta — droga do doskonałego tekstu
           </h2>
         </div>
         <p className="section-sub">
@@ -305,7 +305,7 @@ const About = () => (
         </h2>
 
         <p>
-          Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że praca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobycia z tekstu głębi Twojego przekazu.
+          Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że współpraca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobycia z tekstu głębi Twojego przekazu.
         </p>
         <p>
           Stworzę bezpieczną przestrzeń dla Twojego głosu, tak aby wybrzmiał z pełną mocą. Pomogę Ci wydobyć harmonię, piękno i mocny przekaz, które już tkwią w Twoich słowach. Niezależnie od tego, czy pracuję nad literaturą piękną, publicystyką, tekstem naukowym czy komercyjnym – zawsze dbam o to, by Twój tekst był zapisany doskonale.
@@ -517,7 +517,7 @@ const Quote = () => {
               Prześlij mi krótki fragment swojego tekstu (wystarczą 1–2 strony, najlepiej ze środka materiału, w formacie .docx).
             </li>
             <li>
-              Przygotuję dla Ciebie bezpłatną próbkę redakcji i/lub korekty. Dzięki temu zobaczysz mój styl w praktyce i sprawdzisz, jak czujesz się z moimi sugestiami.
+              Przygotuję dla Ciebie bezpłatną próbkę redakcji i/lub korekty. Dzięki temu poznasz mój styl pracy w praktyce i sprawdzisz, jak czujesz się z moimi sugestiami.
             </li>
             <li>
               Podejmiemy decyzję. Jeśli wspólnie zdecydujemy, że to właściwy kierunek i nasza wizja współpracy się pokrywa, poproszę Cię o przesłanie całości materiału.

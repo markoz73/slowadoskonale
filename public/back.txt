@@ -1,0 +1,7 @@
+.signature {
+  margin-top: 32px;
+  font-family: "Corinthia", serif;
+  font-style: italic;
+  font-size: 26px;
+  color: var(--navy);
+}
