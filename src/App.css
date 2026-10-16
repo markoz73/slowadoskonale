@@ -672,7 +672,6 @@ p, h1, h2, h3, li {
   letter-spacing: 0.005em;
 }
 
-/* Przycisk rozwijania długiego tekstu */
 .t-expand-btn {
   background: none;
   border: none;
@@ -680,17 +679,18 @@ p, h1, h2, h3, li {
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 10px 0;
+  padding: 12px 0; /* Większa strefa trafienia palcem */
   margin-top: -12px;
   margin-bottom: 24px;
   text-align: left;
   text-decoration: underline;
   align-self: flex-start;
   
-  /* Naprawa obsługi dotyku na mobilkach: */
   position: relative;
   z-index: 10;
   touch-action: manipulation;
+  user-select: none; /* Zapobiega zaznaczaniu tekstu przy szybkim klikaniu */
+  -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
