@@ -333,24 +333,19 @@ const About = () => (
 
 const TestimonialCard = ({ t, i }) => {
   const [expanded, setExpanded] = useState(false);
-  const cardRef = useRef(null);
   const MAX_LENGTH = 230;
 
   const getShortQuote = (text, maxLength) => {
     if (text.length <= maxLength) return text;
-
     const sub = text.slice(0, maxLength);
-
     const lastSentenceMatch = sub.match(/.*[.!?](?=\s|$)/);
     if (lastSentenceMatch && lastSentenceMatch[0].length > 70) {
       return `${lastSentenceMatch[0].replace(/[.!?]+$/, "")}...`;
     }
-
     const lastSpace = sub.lastIndexOf(" ");
     if (lastSpace > 0) {
       return `${sub.slice(0, lastSpace)}...`;
     }
-
     return `${sub}...`;
   };
 
@@ -359,24 +354,8 @@ const TestimonialCard = ({ t, i }) => {
     ? getShortQuote(t.quote, MAX_LENGTH) 
     : t.quote;
 
-  const toggleExpand = (e) => {
-    // Zapobiegamy domyślnym gestom scrollowania przy dotknięciu
-    if (e) {
-      e.preventDefault();
-    }
-
-    setExpanded((prev) => {
-      const nextState = !prev;
-      // Jeśli zwijamy opinię, delikatnie przywracamy wzrok na początek kafelka
-      if (!nextState && cardRef.current) {
-        cardRef.current.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-      return nextState;
-    });
-  };
-
   return (
-    <article className="t-card" ref={cardRef} data-testid={`testimonial-card-${i}`}>
+    <article className="t-card" data-testid={`testimonial-card-${i}`}>
       <div>
         <Stars />
         <p className="t-quote">„{displayText}”</p>
@@ -384,7 +363,7 @@ const TestimonialCard = ({ t, i }) => {
           <button 
             type="button"
             className="t-expand-btn" 
-            onPointerDown={toggleExpand}
+            onClick={() => setExpanded(!expanded)}
           >
             {expanded ? "Zwiń opinię" : "Przeczytaj całość"}
           </button>
