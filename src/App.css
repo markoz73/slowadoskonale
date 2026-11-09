@@ -1089,4 +1089,5 @@ p, h1, h2, h3, li {
   line-height: 1.75;
   color: var(--bone);
   margin: 18px 0 28px;
+  white-space: pre-line;
 }
