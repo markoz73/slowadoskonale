@@ -32,34 +32,34 @@ const OFFERS = [
   {
     n: "01",
     icon: <PenLine size={22} strokeWidth={1.5} />,
-    title: "Redakcja",
+    title: "Redakcja - Tekst, który dobrze się czyta",
     desc:
-      "Architektura i logika tekstu. Wydobywam jasność przekazu, koryguję nieścisłości logiczne i leksykalne, czuwam nad właściwym rytmem zdań i płynnością narracji – tak, by Twój styl zyskał wyrazistość, a Twoja wizja wybrzmiała z pełną mocą.",
-    bullets: ["Spójna konstrukcja", "Naturalny flow", "Głębia autorskiego stylu"],
+      "Pracuję nad tekstem jako całością. Sprawdzam jego konstrukcję, logikę i spójność. Poprawiam niejasne sformułowania, niezręczności językowe i powtórzenia. Dbam o rytm zdań oraz płynność narracji. Szukam rozwiązań, które pomagają lepiej przekazać Twoje myśli, nie zmieniając tekstu w mój sposób pisania.",
+    bullets: ["Spójna konstrukcja", "Jasny przekaz", "Płynność i styl"],
   },
   {
     n: "02",
     icon: <Feather size={22} strokeWidth={1.5} />,
-    title: "Korekta",
+    title: "Korekta - Poprawność w każdym szczególe",
     desc:
-      "Precyzja i czystość językowa. Eliminuję usterki gramatyczne, interpunkcyjne i literówki. Dbam o nienaganną poprawność, dzięki czemu Twój przekaz trafia do odbiorców w bezbłędnej formie.",
-    bullets: ["Językowa precyzja", "Czystość zapisu", "Pełne skupienie na treści"],
+      "Sprawdzam tekst pod kątem błędów ortograficznych, interpunkcyjnych, gramatycznych i składniowych. Wychwytuję literówki, błędy językowe oraz niekonsekwencje w zapisie. Zwracam uwagę na szczegóły, które łatwo przeoczyć podczas samodzielnego czytania.",
+    bullets: ["Ortografia i interpunkcja", "Gramatyka i składnia", "Staranność zapisu"],
   },
   {
     n: "03",
     icon: <BookOpen size={22} strokeWidth={1.5} />,
-    title: "Korekta po składzie (PDF)",
+    title: "Korekta po składzie (PDF) - Ostatnie czytanie przed publikacją",
     desc:
-      "Analiza optyczna i czyszczenie przeoczeń. Weryfikuję układ typograficzny, podział słów oraz estetykę łamania tekstu – dbając o to, by słowa prezentowały się doskonale w finalnym formacie publikacji.",
-    bullets: ["Typograficzna czujność", "Oko do detali", "Bezpieczeństwo przed drukiem"],
+      "Sprawdzam książkę lub inną publikację po składzie, w jej docelowym układzie graficznym. Weryfikuję podziały wyrazów, układ tekstu i poprawność typograficzną. Wychwytuję również literówki i inne błędy, które mogły pozostać po wcześniejszych etapach pracy.",
+    bullets: ["Kontrola składu", "Podziały wyrazów i typografia", "Weryfikacja przed publikacją"],
   },
   {
     n: "04",
     icon: <SearchCheck size={22} strokeWidth={1.5} />,
-    title: "Rewizja",
+    title: "Rewizja - Kontrola wprowadzonych zmian",
     desc:
-      "Weryfikacja i ostateczny audyt tekstu. Sprawdzam poprawność wdrożenia sugerowanych poprawek i upewniam się, czy tekst zachował swoją integralność – tak, aby dać Ci pewność, że Twoja publikacja jest gotowa do wydania.",
-    bullets: ["Ostateczny audyt", "Spójność zmian", "Twoja pewność i pełny spokój"],
+      "Sprawdzam, czy poprawki korekty po składzie zostały prawidłowo wdrożone. Kontroluję spójność tekstu i wychwytuję ewentualne błędy, które pojawiły się podczas wprowadzania zmian lub przygotowania publikacji do druku.",
+    bullets: ["Weryfikacja poprawek", "Kontrola spójności", "Ostatnia kontrola tekstu"],
   },
 ];
 
@@ -216,13 +216,12 @@ const Hero = () => {
           </h1> */}
           {/* seo */}
         <h1>
-          Redakcja i korekta.
+          Redakcja i korekta tekstów.
           <br />
-          Twoje słowa w <em>perfekcyjnym</em> wydaniu
+          Twój tekst. Twój styl. <em>Dopracowana</em> forma
         </h1>          
           <p className="lead">
-            Specjalizuję się w profesjonalnej redakcji i korekcie tekstów. Każde słowo traktuję z troską i precyzją, na jakie zasługuje Twoja autorska wizja.
-          </p>
+            Współpracuję z pisarzami, twórcami artykułów i tekstów użytkowych. Pomagam przełożyć myśli na klarowny przekaz: porządkuję strukturę i dbam o poprawność językową. Zwracam uwagę na szczegóły, ale zawsze patrzę też na całość – sens, logikę i charakter tekstu.</p>
           <div className="hero-cta">
             <button onClick={goToQuote} className="btn btn-gold btn-large" data-testid="hero-cta-primary">
               Bezpłatna wycena
@@ -248,7 +247,7 @@ const Hero = () => {
             loading="eager"
           />
           <div className="stamp">
-            Słowo ma swoją wagę – zadbajmy o to, by wybrzmiało doskonale
+            Dopracowany tekst zaczyna się od uważnego czytania
           </div>
         </div>
       </div>
@@ -265,11 +264,13 @@ const Offer = () => (
           <h2 className="section-title">
             {/* seo */}
             {/* Droga do doskonałego tekstu */}
-            Redakcja i korekta — droga do doskonałego tekstu
+            Redakcja i korekta tekstów – jak mogę Ci pomóc?
           </h2>
         </div>
         <p className="section-sub">
-          Zawsze pracuję w pełnym poszanowaniu Twojego stylu i autorskiego zamysłu. Możemy podjąć współpracę na dowolnym z poniższych etapów, jak również połączyć je w spójny proces wydawniczy.
+          Każdy tekst wymaga czegoś innego. Czasem potrzebuje uporządkowania i dopracowania, czasem wystarczy sprawdzić poprawność językową, a czasem warto skontrolować go jeszcze przed publikacją.
+          Oferuję cztery rodzaje usług, które możesz zamówić osobno lub połączyć – zależnie od potrzeb materiału.
+ 
         </p>
       </div>
       <div className="offer-grid">
@@ -307,27 +308,31 @@ const About = () => (
       <div className="about-text reveal">
         <div className="eyebrow">O mnie</div>
         <h2>
-          Pasja do odkrywania,<br />
-          <em>uważność, </em>pełne wsparcie
+          Lubię wiedzieć, dlaczego coś<br />
+          <em>działa </em> – i co można zrobić, żeby działało lepiej
         </h2>
 
         <p>
-          Jestem redaktorką, korektorką i przede wszystkim – uważną czytelniczką. Wierzę, że współpraca nad tekstem to proces pełen wzajemnego szacunku, a dobra redakcja to nie mechaniczne poprawianie błędów, ale sztuka wydobycia z tekstu głębi Twojego przekazu.
+Lubię, kiedy rzeczy działają dobrze. A jeszcze bardziej lubię odkrywać, co można zrobić, żeby działały lepiej.
+Przyglądam się, analizuję, szukam zależności i rozwiązań. Lubię porządkować, usprawniać i dopracowywać – zarówno drobiazgi, jak i większe całości. Tę samą przyjemność odnajduję w pracy z tekstem.
+Nie wystarczy mi zauważyć, że zdanie brzmi niezgrabnie. Chcę wiedzieć, dlaczego tak jest i jak można je poprawić.
+Zwracam uwagę na szczegóły, ale nie tracę z oczu całości: sensu, logiki, konstrukcji i intencji osoby piszącej. Czytam uważnie, interesuję się opowiadaną historią i szukam rozwiązań, które poprawiają tekst, nie odbierając mu indywidualnego charakteru.
+
         </p>
         <p>
-          Stworzę bezpieczną przestrzeń dla Twojego głosu, tak aby wybrzmiał z pełną mocą. Pomogę Ci wydobyć harmonię, piękno i mocny przekaz, które już tkwią w Twoich słowach. Niezależnie od tego, czy pracuję nad literaturą piękną, publicystyką, tekstem naukowym czy komercyjnym – zawsze dbam o to, by Twój tekst był zapisany doskonale.
+W pracy redaktorskiej ciekawość bardzo się przydaje. Pozwala dostrzegać nie tylko błędy językowe, ale również nieścisłości, nieoczywiste zależności i miejsca, które wymagają zastanowienia.
+Lubię zadawać pytania, szukać przyczyn i sprawdzać, czy proponowana zmiana rzeczywiście poprawia tekst.
+
         </p>
         <p>
-          W procesie twórczym staję się Twoim partnerem i pierwszym, wspierającym czytelnikiem. Dbam o to, by tekst w pełni zachował Twoje pisarskie DNA. Podkreślam to, co w Twoim stylu najpiękniejsze, i z wyczuciem koryguję to, co mogłoby rozpraszać w trakcie lektury. Pracuję w trybie śledzenia zmian – nigdy nie podejmuję decyzji sama, bo to do Ciebie należy ostateczny głos. Szanuję każde Twoje słowo, dlatego nie przepisuję zdań na nowo, lecz szlifuję je z najwyższą uważnością. 
+Podróżuję rowerem, czytam książki, oglądam dobre filmy. Ciekawi mnie przyroda, architektura, malarstwo, regionalne kuchnie, a przede wszystkim ludzie – ich historie, pasje i motywacje.
+Lubię poznawać rzeczy od podszewki i rozumieć, skąd się wzięły i dlaczego są właśnie takie.
+W relacjach cenię otwartość, dialog i wzajemny szacunek. Lubię rozmawiać, wyjaśniać wątpliwości i wspólnie szukać najlepszych rozwiązań.
+Wierzę, że dobra współpraca nad tekstem zaczyna się od wzajemnego zrozumienia.
+
         </p>
         <p>
-        Mój atut to umiejętność spojrzenia na słowa ze świeżej, redaktorskiej oraz czytelniczej perspektywy i dostrzeżenia niuansów, które łatwo przeoczyć, będąc bardzo blisko własnego tekstu. Finalnie na tej drodze najważniejsza jest dla mnie Twoja duma oraz zachwyt Twoich odbiorców.
-          </p>
-          <p>
-        Po odłożeniu arkuszy wydawniczych z równą pasją odkrywam świat i ludzi. Poznaję ich zarówno w domowym zaciszu – podczas spotkań przy planszówkach, na kartach książek i w dobrym kinie – jak i w podróży, tej dalekiej i tej zupełnie bliskiej. Zachwycam się surowym pięknem natury oraz genialnymi osiągnięciami człowieka w architekturze, muzyce i literaturze. Z ciekawością słucham opowieści o życiu i marzeniach. Lubię zwiedzać świat na rowerze, a każdą wyprawę z radością wieńczę smakowaniem lokalnej kuchni i pysznych łakoci.
-          </p>
-          <p>
-        Wierzę, że współpraca przy Twoim tekście to osobna, wyjątkowa podróż. Zapraszam Cię do wspólnego projektu – stwórzmy przestrzeń, w której Twoje słowa zyskają należną im uwagę.
+Jeśli szukasz redaktorki, która uważnie przeczyta Twój tekst, przyjrzy się mu z różnych perspektyw i pomoże znaleźć najlepsze rozwiązania, zapraszam do współpracy.
           </p>
         <div className="signature">
           Agnieszka Kozak
@@ -425,10 +430,12 @@ const Testimonials = () => {
         <div className="t-head reveal">
           <div>
             <div className="eyebrow">Opinie twórców</div>
-            <h2 className="section-title">Słowa, które do mnie wracają</h2>
+            <h2 className="section-title">Opinie o współpracy – co mówią osoby, z którymi pracowałam?</h2>
             <p className="section-sub">
-              Najpiękniejsze rekomendacje to te, w których czuć ulgę
-              i dumę autorów z gotowego tekstu.
+Najlepiej o współpracy opowiadają osoby, które ją poznały.
+Każdy projekt wygląda inaczej. Jedne osoby powierzają mi powieści, inne artykuły naukowe, wpisy blogowe lub dokumenty użytkowe. Łączy je to, że wspólnie szukamy rozwiązań, które pomagają tekstowi spełnić jego cel.
+Poniżej znajdziesz wybrane opinie.
+
             </p>
           </div>
           <div className="t-controls" aria-label="Nawigacja opinii">
@@ -507,35 +514,43 @@ const Quote = () => {
       <div className="quote-inner reveal">
         <div className="eyebrow" style={{ justifyContent: "center" }}>Bezpłatna wycena</div>
         <h2 style={{ textAlign: "left" }}>
-          Zaufanie to podstawa dobrej współpracy. Poznaj mój warsztat dzięki bezpłatnej próbce
+          Bezpłatna wycena redakcji i korekty tekstu
           
         </h2>
         <div className="quote-divider" />
 <div className="quote-text">
           <p>
-            Każdy tekst to unikalna historia, która wymaga indywidualnego podejścia i wzajemnego zaufania. Chcę mieć pewność, że moje wsparcie w pełni odpowie na Twoje potrzeby, a Ty będziesz czuć się bezpiecznie w każdym momencie pracy nad tekstem.
+           Zobacz, jak pracuję, zanim zdecydujesz się na współpracę.
+            Każdy tekst jest inny, dlatego zależy mi, żeby przed podjęciem decyzji było jasne, czego możesz się spodziewać.
+            Prześlij mi krótki fragment swojej pracy, a ja przygotuję bezpłatną próbkę redakcji i/lub korekty.
+            Zobaczysz moje propozycje zmian, komentarze i sposób pracy z tekstem.
+
           </p>
           <p>
-            Dlatego na początek zapraszam Cię do niezobowiązującego kroku:
+           Jak to wygląda?
           </p>
 
           <ol className="quote-steps">
             <li>
-              Prześlij mi krótki fragment swojego tekstu (wystarczą 1–2 strony, najlepiej ze środka materiału, w formacie .docx).
+              Prześlij fragment tekstu. Wystarczy 1–2 strony, najlepiej ze środka materiału, w pliku DOCX.
+
             </li>
             <li>
-              Przygotuję dla Ciebie bezpłatną próbkę redakcji i/lub korekty. Dzięki temu poznasz mój styl pracy w praktyce i sprawdzisz, jak czujesz się z moimi sugestiami.
+             Przygotuję bezpłatną próbkę. Zredaguję i/lub skoryguję przesłany fragment. Zobaczysz moje poprawki i komentarze, a także sposób, w jaki pracuję z tekstem.
+
             </li>
             <li>
-              Podejmiemy decyzję. Jeśli wspólnie zdecydujemy, że to właściwy kierunek i nasza wizja współpracy się pokrywa, poproszę Cię o przesłanie całości materiału.
+              Zdecydujesz, czy chcesz współpracować. Spokojnie zapoznasz się z propozycjami. Jeśli uznasz, że odpowiada Ci mój sposób pracy, przejdziemy do kolejnego etapu.
+
             </li>
             <li>
-              Otrzymasz dedykowaną wycenę oraz harmonogram prac dostosowany do Twojego projektu.
+              Otrzymasz wycenę i termin. Po zapoznaniu się z całością materiału przygotuję indywidualną wycenę i zaproponuję harmonogram prac.
+
             </li>
           </ol>
 
           <p>
-            Napisz do mnie i opowiedz kilka słów o tym, co tworzysz. Sprawdźmy, jak możemy sprawić, by Twoje słowa były zapisane doskonale.
+            Napisz do mnie i opowiedz kilka słów o swoim projekcie. Chętnie go poznam!
           </p>
 
         </div>        <a href="mailto:agnieszka.kozak@slowadoskonale.pl" data-testid="contact-email">
@@ -565,13 +580,23 @@ const Contact = () => {
     setTimeout(() => setSent(false), 4000);
   };
 
-  return (
+ return (
     <section id="kontakt" className="section contact" data-testid="contact-section">
       <div className="contact-grid">
-        
-        <aside className="contact-info reveal">
-          <h2 className="eyebrow">Kontakt</h2>
+        <div className="contact-info reveal">
+          <div className="eyebrow">Kontakt</div>
+          <h3>
+            Potrzebujesz redakcji i korekty tekstu? <em>Napisz do mnie.</em>
+          </h3>
+          <p>
+            Opowiedz, czego dotyczy projekt, na jakim jest etapie i jakiego wsparcia potrzebujesz.
+          </p>
+          <p>
+            Nie musisz od razu wiedzieć, czy potrzebujesz redakcji, korekty czy obu usług. Chętnie pomogę Ci ustalić odpowiedni zakres pracy.
+          </p>
+        </div>
 
+        <aside className="contact-card reveal">
           <ul className="info-list">
             <li>
               <div className="info-icon"><Mail size={18} /></div>
@@ -589,9 +614,7 @@ const Contact = () => {
                 <a href="tel:+48609620240" data-testid="contact-phone">+48 609 620 240</a>
               </div>
             </li>
-
           </ul>
-
         </aside>
       </div>
     </section>
